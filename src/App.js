@@ -1,11 +1,10 @@
-import Palette from "./components/Palette/Palette";
-import initialPalettes from "./initialPalettes";
+import PalettePage from "./pages/PalettePage";
 
 function App() {
   return (
-    <div className="App">
-      <Palette {...initialPalettes[4]}/>
-    </div>
+    <main className="App">
+      <PalettePage />
+    </main>
   );
 }
 
