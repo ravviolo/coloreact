@@ -1,8 +1,10 @@
+import * as Styled from './Nav.styles'
+
 const Nav = () => {
     return (
-        <nav>
+        <Styled.Nav>
             <p>nav here</p>
-        </nav>
+        </Styled.Nav>
     )
 }
 

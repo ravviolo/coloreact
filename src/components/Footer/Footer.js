@@ -1,9 +1,11 @@
-const Footer = () => {
-    return (
-        <footer>
-          <p>footer here</p>  
-        </footer>
-    )
-}
+import * as Styled from "./Footer.styles";
 
-export default Footer
+const Footer = () => {
+  return (
+    <Styled.Footer>
+      <p>footer here</p>
+    </Styled.Footer>
+  );
+};
+
+export default Footer;

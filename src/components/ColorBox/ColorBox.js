@@ -1,15 +1,15 @@
+import * as Styled from './ColorBox.styles'
+
 const ColorBox = ({color, name}) => {
-    const styles = {
-        height: '100px', width: '100px', backgroundColor: color
-    }
+
     return (
-        <div style={styles}>
+        <Styled.ColorBox bgColor={color}>
             {/* <span>COPY</span> */}
             <div>
             <span>{name}</span>
             {/* <span>MORE</span> */}
             </div>
-        </div>
+        </Styled.ColorBox>
     )
 }
 
