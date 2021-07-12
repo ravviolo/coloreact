@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import PaletteContext from "../../context/PaletteContext";
+import UIContextProvider from '../../context/UIContext'
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -7,16 +8,19 @@ import "rc-slider/assets/index.css";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
+
 import * as Styled from "./Nav.styles";
 
 const Nav = () => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
+  const { setIsOpenSB } = useContext(UIContextProvider);
 
   const handleSliderChange = (e) => {
     setLevel(e);
   };
   const handleSelectChange = (e) => {
     setFormat(e.target.value)
+    setIsOpenSB(true)
   }
   return (
     <Styled.Nav>

@@ -8,7 +8,7 @@ const UIContext = React.createContext({
 });
 
 export const UIContextProvider = ({ children }) => {
-  const [openSB, setIsOpenSB] = useState(false);
+  const [openSB, setIsOpenSB] = useState(true);
   const contextValue = {
     openSB,
     setIsOpenSB,

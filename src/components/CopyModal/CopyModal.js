@@ -1,4 +1,4 @@
-import ReactDOM from "react-dom";
+
 
 import * as Styled from "./CopyModal.styles";
 
