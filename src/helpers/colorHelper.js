@@ -7,8 +7,7 @@ const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
 const getRange = (hexColor) => {
   const beginScale = chroma(hexColor).darken(1.4).hex();
-  //   const endScale = chroma(hexColor).brighten(1.4).hex();
-  const endScale = "#fff";
+  const endScale = chroma(hexColor).brighten(1.4).hex();
 
   return [beginScale, hexColor, endScale];
 };
