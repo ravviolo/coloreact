@@ -5,6 +5,8 @@ export const ColorBox = styled.div`
   width: 20%;
   background-color: ${(props) => props.bgColor};
   position: relative;
+  cursor: pointer;
+  
 `;
 export const CopyContainer = styled.span`
   position: absolute;
@@ -29,13 +31,18 @@ export const InfoContainer = styled.div`
 export const Button = styled.button`
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
   padding: 0.3em 0.6em;
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
   cursor: pointer;
-  outline: none;
-  border: none;
 `;
 export const CopyButton = styled(Button)`
   padding: 0.5em 1.2em;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+
+  ${ColorBox}:hover & {
+      opacity: 1
+  }
 `;
