@@ -31,15 +31,15 @@ export const Content = styled.div`
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 4.5rem;
     text-shadow: 1px 1px 2px rgb(73, 73, 73);
     padding: 0.75em 0;
     background: rgba(255, 255, 255, 0.3);
   }
   & p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 100;
-    margin-top: 1.5em;
+    margin-top: 1.2em;
   }
   ${(props) =>
     props.copied &&

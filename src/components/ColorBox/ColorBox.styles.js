@@ -5,6 +5,7 @@ export const ColorBox = styled.div`
   width: 20%;
   background-color: ${(props) => props.bgColor};
   position: relative;
+
   cursor: pointer;
   
 `;
@@ -25,20 +26,23 @@ export const InfoContainer = styled.div`
   align-items: center;
 
   .colorbox__name {
-    padding-left: 0.2em;
+    letter-spacing: 1px;
+    padding-left: 0.5em;
+    text-transform: uppercase;
   }
 `;
 export const Button = styled.button`
   text-transform: uppercase;
   text-decoration: none;
+  font-size: 1rem;
   border: none;
-  padding: 0.3em 0.6em;
+  padding: 0.4em 0.8em;
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
   cursor: pointer;
 `;
 export const CopyButton = styled(Button)`
-  padding: 0.5em 1.2em;
+  padding: 0.6em 1.5em;
   opacity: 0;
   transition: opacity .3s ease-in-out;
 

@@ -20,11 +20,11 @@ const ColorBox = ({ color, name }) => {
         <Styled.ColorBox bgColor={color}>
           <CopyModal bgColor={color} copied={copied}/>
           <Styled.CopyContainer>
-            <Styled.CopyButton>COPY</Styled.CopyButton>
+            <Styled.CopyButton>copy</Styled.CopyButton>
           </Styled.CopyContainer>
           <Styled.InfoContainer>
             <span className="colorbox__name">{name}</span>
-            <Styled.Button>MORE</Styled.Button>
+            <Styled.Button>more</Styled.Button>
           </Styled.InfoContainer>
         </Styled.ColorBox>
       </CopyToClipboard>
