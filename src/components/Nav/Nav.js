@@ -1,6 +1,10 @@
 import { useContext } from "react";
+<<<<<<< HEAD
 import PaletteContext from "../../context/PaletteContext";
 import UIContextProvider from '../../context/UIContext'
+=======
+import PaletteContext from "../../context/mainContext";
+>>>>>>> 4967889059d0413beed923f916a60df1c9a45855
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -8,19 +12,28 @@ import "rc-slider/assets/index.css";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4967889059d0413beed923f916a60df1c9a45855
 import * as Styled from "./Nav.styles";
 
 const Nav = () => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
+<<<<<<< HEAD
   const { setIsOpenSB } = useContext(UIContextProvider);
+=======
+>>>>>>> 4967889059d0413beed923f916a60df1c9a45855
 
   const handleSliderChange = (e) => {
     setLevel(e);
   };
   const handleSelectChange = (e) => {
     setFormat(e.target.value)
+<<<<<<< HEAD
     setIsOpenSB(true)
+=======
+>>>>>>> 4967889059d0413beed923f916a60df1c9a45855
   }
   return (
     <Styled.Nav>
