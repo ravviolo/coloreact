@@ -1,21 +1,5 @@
-
-
 import * as Styled from "./CopyModal.styles";
 
-// const CopyModalContent = ({ bgColor }) => {
-//   return (
-//     <Styled.Overlay bgColor={bgColor} copied>
-//       <div>
-//       </div>
-//     </Styled.Overlay>
-//   );
-// };
-// const CopyModal = ({bgColor, copied}) => {
-//   return ReactDOM.createPortal(
-//     <CopyModalContent bgColor={bgColor} copied/>,
-//     document.getElementById("copy-modal")
-//   );
-// };
 const CopyOverlay = ({ bgColor, copied }) => {
   return <Styled.Overlay bgColor={bgColor} copied={copied} />;
 };
