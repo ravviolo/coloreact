@@ -1,4 +1,5 @@
 import PalettePage from "./pages/PalettePage";
+import './App.css'
 
 function App() {
   return (
