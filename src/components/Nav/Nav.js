@@ -1,11 +1,27 @@
-import * as Styled from './Nav.styles'
+import { useContext } from "react";
+import PaletteContext from "../../context/mainContext";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+
+import * as Styled from "./Nav.styles";
 
 const Nav = () => {
-    return (
-        <Styled.Nav>
-            <p>nav here</p>
-        </Styled.Nav>
-    )
-}
+  const {level, setLevel} = useContext(PaletteContext);
 
-export default Nav
+  const handleSliderChange = (e) => {
+    setLevel(e);
+  };
+  return (
+    <Styled.Nav>
+      <Slider
+        defaultValue={level}
+        min={100}
+        max={900}
+        step={100}
+        onAfterChange={handleSliderChange}
+      />
+    </Styled.Nav>
+  );
+};
+
+export default Nav;
