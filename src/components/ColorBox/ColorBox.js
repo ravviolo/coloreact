@@ -1,16 +1,17 @@
-import * as Styled from './ColorBox.styles'
+import * as Styled from "./ColorBox.styles";
 
-const ColorBox = ({color, name}) => {
+const ColorBox = ({ color, name }) => {
+  return (
+    <Styled.ColorBox bgColor={color}>
+      <Styled.CopyContainer>
+        <Styled.CopyButton>COPY</Styled.CopyButton>
+      </Styled.CopyContainer>
+      <Styled.InfoContainer>
+        <span className="colorbox__name">{name}</span>
+        <Styled.Button>MORE</Styled.Button>
+      </Styled.InfoContainer>
+    </Styled.ColorBox>
+  );
+};
 
-    return (
-        <Styled.ColorBox bgColor={color}>
-            {/* <span>COPY</span> */}
-            <div>
-            <span>{name}</span>
-            {/* <span>MORE</span> */}
-            </div>
-        </Styled.ColorBox>
-    )
-}
-
-export default ColorBox
+export default ColorBox;
