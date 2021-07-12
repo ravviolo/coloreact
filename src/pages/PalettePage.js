@@ -14,7 +14,7 @@ const PalettePage = () => {
     <Styled.PalettePage>
       <Nav />
       <Palette {...palette} />
-      <Footer />
+      <Footer paletteName={palette.paletteName} emoji={palette.emoji}/>
       <SnackbarComponent />
     </Styled.PalettePage>
   );

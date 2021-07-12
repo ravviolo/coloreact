@@ -1,9 +1,10 @@
 import * as Styled from "./Footer.styles";
 
-const Footer = () => {
+const Footer = ({paletteName, emoji}) => {
   return (
     <Styled.Footer>
-      <p>footer here</p>
+      <Styled.PaletteName>{paletteName}</Styled.PaletteName>
+      <span>{emoji}</span>
     </Styled.Footer>
   );
 };
