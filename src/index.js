@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { PaletteContextProvider } from "./context/mainContext";
+import { PaletteContextProvider } from "./context/PaletteContext";
+import { UIContextProvider } from "./context/UIContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <PaletteContextProvider>
-      <App />
+      <UIContextProvider>
+        <App />
+      </UIContextProvider>
     </PaletteContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

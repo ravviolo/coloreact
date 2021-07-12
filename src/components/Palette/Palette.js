@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PaletteContext from "../../context/mainContext";
+import PaletteContext from "../../context/PaletteContext";
 import ColorBox from "../ColorBox/ColorBox";
 
 import * as Styled from "./Palette.styles";

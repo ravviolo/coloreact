@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PaletteContext from "../../context/mainContext";
+import PaletteContext from "../../context/PaletteContext";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
