@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -8,11 +9,13 @@ import { UIContextProvider } from "./context/UIContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PaletteContextProvider>
-      <UIContextProvider>
-        <App />
-      </UIContextProvider>
-    </PaletteContextProvider>
+    <BrowserRouter>
+      <PaletteContextProvider>
+        <UIContextProvider>
+          <App />
+        </UIContextProvider>
+      </PaletteContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
