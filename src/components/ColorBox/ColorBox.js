@@ -24,7 +24,7 @@ const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
   return (
     <>
       <CopyToClipboard text={color} onCopy={handleCopy}>
-        <Styled.ColorBox bgColor={color} isShadesPalette>
+        <Styled.ColorBox bgColor={color} isShadesPalette={isShadesPalette}>
           <CopyModal bgColor={color} copied={copied} />
           <Styled.CopyContainer>
             <Styled.CopyButton>copy</Styled.CopyButton>
