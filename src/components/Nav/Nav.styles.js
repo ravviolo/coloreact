@@ -68,7 +68,7 @@ export const LogoContainer = styled.div`
   display: grid;
   place-items: center;
   cursor: pointer;
-  & span {
+  & a {
     font-size: 1.5rem;
     letter-spacing: 5px;
     font-weight: 500;

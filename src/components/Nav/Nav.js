@@ -1,6 +1,7 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import PaletteContext from "../../context/PaletteContext";
-import UIContextProvider from '../../context/UIContext'
+import UIContextProvider from "../../context/UIContext";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -18,13 +19,13 @@ const Nav = () => {
     setLevel(e);
   };
   const handleSelectChange = (e) => {
-    setFormat(e.target.value)
-    setIsOpenSB(true)
-  }
+    setFormat(e.target.value);
+    setIsOpenSB(true);
+  };
   return (
     <Styled.Nav>
       <Styled.LogoContainer>
-        <span>coloreact</span>
+        <Link to="/">coloreact</Link>
       </Styled.LogoContainer>
       <Styled.SliderContainer>
         <span>Level: {level}</span>
