@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import PaletteContext from "../../context/PaletteContext";
+
+import PalettePreview from "../../components/PalettePreview/PalettePreview";
 
 const PaletteListPage = () => {
   const { palettes } = useContext(PaletteContext);
@@ -8,10 +9,9 @@ const PaletteListPage = () => {
     <div>
       <h1>Coloreact</h1>
 
-        {palettes.map((palette) => (
-          <Link to={`/${palette.id}`}>{palette.paletteName}</Link>
-        ))}
-
+      {palettes.map((palette) => (
+        <PalettePreview {...palette} />
+      ))}
     </div>
   );
 };
