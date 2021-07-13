@@ -8,6 +8,7 @@ const PaletteContext = React.createContext({
   format: "hex",
   setLevel: () => {},
   getPalette: () => {},
+  getShades: () => {}
 });
 
 export const PaletteContextProvider = ({ children }) => {
@@ -20,6 +21,19 @@ export const PaletteContextProvider = ({ children }) => {
     );
     return generatePalette(filteredPalette);
   };
+
+  const getShades = (palette, targetColorId) => {
+    let shades = [];
+    let allColors = palette.colors;
+
+    for (let key in allColors) {
+      shades = shades.concat(
+        allColors[key].filter((color) => color.id === targetColorId)
+      );
+    }
+    return shades;
+  }
+
   const contextValue = {
     palettes: initialPalettes,
     level,
@@ -27,6 +41,7 @@ export const PaletteContextProvider = ({ children }) => {
     format,
     setFormat,
     getPalette,
+    getShades,
   };
   return (
     <PaletteContext.Provider value={contextValue}>

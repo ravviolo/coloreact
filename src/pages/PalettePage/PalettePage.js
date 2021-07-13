@@ -10,17 +10,22 @@ import SnackbarComponent from "../../components/UI/SnackbarComponent";
 import * as Styled from "./PalettePage.styles";
 import initialPalettes from "../../initialPalettes";
 
-const PalettePage = () => {
-  const { getPalette } = useContext(PaletteContext);
-  const {paletteId} = useParams();
+const PalettePage = ({shadesPalette}) => {
+  const { getPalette, getShades } = useContext(PaletteContext);
+  const {paletteId, colorId} = useParams();
 
-  const palette = getPalette(paletteId)
+  let palette = getPalette(paletteId)
+
+  if (shadesPalette) {
+    const shades = getShades(palette, colorId)
+    palette = {...palette, colors:shades.slice(1)}
+  }
 
   
   return (
     <Styled.PalettePage>
-      <Nav />
-      <Palette {...palette} />
+      <Nav shadesPalette={shadesPalette}/>
+      <Palette {...palette} shadesPalette={shadesPalette} />
       <Footer paletteName={palette.paletteName} emoji={palette.emoji}/>
       <SnackbarComponent />
     </Styled.PalettePage>

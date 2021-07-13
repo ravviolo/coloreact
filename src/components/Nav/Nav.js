@@ -11,7 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 import * as Styled from "./Nav.styles";
 
-const Nav = () => {
+const Nav = ({ shadesPalette }) => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
   const { setIsOpenSB } = useContext(UIContextProvider);
 
@@ -22,21 +22,25 @@ const Nav = () => {
     setFormat(e.target.value);
     setIsOpenSB(true);
   };
+
   return (
     <Styled.Nav>
       <Styled.LogoContainer>
         <Link to="/">coloreact</Link>
       </Styled.LogoContainer>
-      <Styled.SliderContainer>
-        <span>Level: {level}</span>
-        <Slider
-          defaultValue={level}
-          min={100}
-          max={900}
-          step={100}
-          onAfterChange={handleSliderChange}
-        />
-      </Styled.SliderContainer>
+      {!shadesPalette && (
+        <Styled.SliderContainer>
+          <span>Level: {level}</span>
+          <Slider
+            defaultValue={level}
+            min={100}
+            max={900}
+            step={100}
+            onAfterChange={handleSliderChange}
+          />
+        </Styled.SliderContainer>
+      )}
+
       <Styled.SelectContainer>
         <Select
           labelId="color-format-select-label"

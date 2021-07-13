@@ -11,10 +11,10 @@ function App() {
         <PaletteListPage />
       </Route>
       <Route path="/palette/:paletteId" exact>
-        <PalettePage />
+        <PalettePage shadesPalette={false}/>
       </Route>
       <Route path="/palette/:paletteId/:colorId" exact>
-        <h1>Hi</h1>
+        <PalettePage shadesPalette={true}/>
       </Route>
     </main>
   );
