@@ -13,6 +13,9 @@ function App() {
       <Route path="/palette/:paletteId" exact>
         <PalettePage />
       </Route>
+      <Route path="/palette/:paletteId/:colorId" exact>
+        <h1>Hi</h1>
+      </Route>
     </main>
   );
 }
