@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ColorBox = styled.div`
   height: ${({ isShadesPalette }) => (isShadesPalette ? "50%" : "25%")};
@@ -8,7 +8,7 @@ export const ColorBox = styled.div`
 
   cursor: pointer;
 `;
-export const CopyContainer = styled.span`
+export const CenteredContainer = styled.span`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,8 +44,13 @@ export const CopyButton = styled(Button)`
   padding: 0.6em 1.5em;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
   ${ColorBox}:hover & {
     opacity: 1;
+  }
+`;
+export const LinkButton = styled(CopyButton)`
+  opacity: .8;
+  ${ColorBox}:hover & {
+    opacity: 1
   }
 `;
