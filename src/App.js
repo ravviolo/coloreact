@@ -7,10 +7,10 @@ import PaletteListPage from "./pages/PaletteListPage/PaletteListPage";
 function App() {
   return (
     <main className="App">
-      <Route path='/' exact>
-        <PaletteListPage/>
+      <Route path="/" exact>
+        <PaletteListPage />
       </Route>
-      <Route path="/:paletteId" exact>
+      <Route path="/palette/:paletteId" exact>
         <PalettePage />
       </Route>
     </main>

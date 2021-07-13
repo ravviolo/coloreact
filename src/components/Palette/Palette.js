@@ -7,7 +7,7 @@ import * as Styled from "./Palette.styles";
 const Palette = ({ colors }) => {
   const { level, format } = useContext(PaletteContext);
   const colorBoxes = colors[level].map((color) => (
-    <ColorBox name={color.name} color={color[format]} />
+    <ColorBox name={color.name} color={color[format]} colorId={color.id} />
   ));
   return <Styled.Palette>{colorBoxes}</Styled.Palette>;
 };

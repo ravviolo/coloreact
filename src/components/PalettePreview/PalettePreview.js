@@ -3,7 +3,7 @@ import * as Styled from "./PalettePreview.styles";
 
 const PalettePreview = ({ id, paletteName, emoji, colors }) => {
   const history = useHistory();
-  const handleRedirect = () => history.push(`/${id}`);
+  const handleRedirect = () => history.push(`/palette/${id}`);
   return (
     <Styled.Card onClick={handleRedirect}>
       <Styled.ColorContainer>
