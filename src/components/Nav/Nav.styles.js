@@ -93,7 +93,7 @@ export const LogoContainer = styled.div`
     background-size: 400% 100%;
     &:hover {
       animation-name: ${rainbow};
-      animation-duration: 2s;
+      animation-duration: 6s;
       animation-iteration-count: infinite;
       animation-timing-function: ease;
     }
