@@ -1,10 +1,19 @@
-const PaletteListPage = () => {
-    return (
-        <div>
-            <h1>Coloreact</h1>
-            
-        </div>
-    )
-}
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import PaletteContext from "../../context/PaletteContext";
 
-export default PaletteListPage
+const PaletteListPage = () => {
+  const { palettes } = useContext(PaletteContext);
+  return (
+    <div>
+      <h1>Coloreact</h1>
+
+        {palettes.map((palette) => (
+          <Link to={`/${palette.id}`}>{palette.paletteName}</Link>
+        ))}
+
+    </div>
+  );
+};
+
+export default PaletteListPage;
