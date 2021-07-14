@@ -7,7 +7,7 @@ const ColorBoxLink = ({ isShadesPalette }) => {
   return (
     <Styled.ColorBox onClick={handleGoBack} bgColor="black" isShadesPalette={isShadesPalette}>
       <Styled.CenteredContainer>
-        <Styled.LinkButton >back</Styled.LinkButton>
+        <Styled.LinkButton bgColor="black">back</Styled.LinkButton>
       </Styled.CenteredContainer>
     </Styled.ColorBox>
   );
