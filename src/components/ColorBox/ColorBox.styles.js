@@ -1,13 +1,16 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { TEXT_CONTRAST } from "../../constants/textContast";
+
 
 export const ColorBox = styled.div`
   height: ${({ isShadesPalette }) => (isShadesPalette ? "50%" : "25%")};
   width: 20%;
   background-color: ${(props) => props.bgColor};
   position: relative;
-
+  color: ${TEXT_CONTRAST};
   cursor: pointer;
 `;
+
 export const CenteredContainer = styled.span`
   position: absolute;
   top: 50%;
@@ -15,6 +18,7 @@ export const CenteredContainer = styled.span`
   transform: translate(-50%, -50%);
   font-size: 1rem;
 `;
+
 export const InfoContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -30,6 +34,7 @@ export const InfoContainer = styled.div`
     text-transform: uppercase;
   }
 `;
+
 export const Button = styled.button`
   text-transform: uppercase;
   text-decoration: none;
@@ -37,9 +42,10 @@ export const Button = styled.button`
   border: none;
   padding: 0.4em 0.8em;
   background-color: rgba(255, 255, 255, 0.3);
-  color: white;
   cursor: pointer;
+  color: ${TEXT_CONTRAST};
 `;
+
 export const CopyButton = styled(Button)`
   padding: 0.6em 1.5em;
   opacity: 0;
@@ -48,9 +54,10 @@ export const CopyButton = styled(Button)`
     opacity: 1;
   }
 `;
+
 export const LinkButton = styled(CopyButton)`
-  opacity: .8;
+  opacity: 0.8;
   ${ColorBox}:hover & {
-    opacity: 1
+    opacity: 1;
   }
 `;

@@ -7,6 +7,7 @@ import CopyModal from "../CopyModal/CopyModal";
 import * as Styled from "./ColorBox.styles";
 
 const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
+
   const [copied, setCopied] = useState(false);
   const match = useRouteMatch();
   const history = useHistory();
@@ -17,24 +18,27 @@ const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
       setCopied(false);
     }, 1500);
   };
+  
   const handleOpenShadesPalette = (e) => {
     e.stopPropagation();
     history.push(`${match.url}/${colorId}`);
   };
+
   return (
     <>
       <CopyToClipboard text={color} onCopy={handleCopy}>
         <Styled.ColorBox bgColor={color} isShadesPalette={isShadesPalette}>
           <CopyModal bgColor={color} copied={copied} />
           <Styled.CenteredContainer>
-            <Styled.CopyButton>copy</Styled.CopyButton>
+            <Styled.CopyButton bgColor={color}>copy</Styled.CopyButton>
           </Styled.CenteredContainer>
           <Styled.InfoContainer>
             <span className="colorbox__name">{name}</span>
-            {!isShadesPalette && <Styled.Button onClick={handleOpenShadesPalette}>
-              more
-            </Styled.Button>}
-            
+            {!isShadesPalette && (
+              <Styled.Button onClick={handleOpenShadesPalette} bgColor={color}>
+                more
+              </Styled.Button>
+            )}
           </Styled.InfoContainer>
         </Styled.ColorBox>
       </CopyToClipboard>

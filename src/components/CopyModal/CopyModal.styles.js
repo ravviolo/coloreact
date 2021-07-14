@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { TEXT_CONTRAST } from "../../constants/textContast";
+
 
 export const Overlay = styled.div`
   width: 100%;
@@ -40,6 +42,7 @@ export const Content = styled.div`
     font-size: 1.5rem;
     font-weight: 100;
     margin-top: 1.2em;
+    color: ${TEXT_CONTRAST}
   }
   ${(props) =>
     props.copied &&

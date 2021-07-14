@@ -5,7 +5,7 @@ const CopyOverlay = ({ bgColor, copied }) => {
 };
 const OverlayContent = ({ bgColor, copied }) => {
   return (
-    <Styled.Content copied={copied}>
+    <Styled.Content copied={copied} bgColor={bgColor}>
       <h1>copied</h1>
       <p>{bgColor}</p>
     </Styled.Content>
