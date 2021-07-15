@@ -1,7 +1,3 @@
 import { makeStyles } from "@material-ui/core";
 
-export const useStyles = makeStyles({
-    AddColorButton: {
-        backgroundColor: props=>props.pickedColor
-    }
-});
+export const useStyles = makeStyles({});

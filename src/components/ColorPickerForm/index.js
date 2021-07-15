@@ -60,9 +60,9 @@ const ColorPickerForm = () => {
       />
       <Button
         variant="contained"
-        className={classes.AddColorButton}
         type="submit"
         disabled={isPaletteFull}
+        style={{ backgroundColor: pickedColor }}
       >
         {isPaletteFull ? "Palette Full" : "Add Color"}
       </Button>
