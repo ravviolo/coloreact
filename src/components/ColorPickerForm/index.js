@@ -1,16 +1,16 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import PaletteContext from "../../context/PaletteContext";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { ChromePicker } from "react-color";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "./styles";
 
-
 const ColorPickerForm = () => {
   const [pickedColor, setPickedColor] = useState("teal");
   const [inputText, setInputText] = useState("");
-  const {setNewPalette} = useContext(PaletteContext)
+  const { newPalette, setNewPalette } = useContext(PaletteContext);
   const classes = useStyles({ pickedColor });
+  const isPaletteFull = newPalette.length === 20;
 
   const handlePickedColorUpdate = (currentColor) => {
     setPickedColor(currentColor.hex);
@@ -24,35 +24,46 @@ const ColorPickerForm = () => {
       name: inputText,
       color: pickedColor,
     };
-    setNewPalette((state) => [...state, newColor])
-    setInputText('')
+    setNewPalette((state) => [...state, newColor]);
+    setInputText("");
   };
 
-  //   const handleAddColor = () => {
-  //     const newColor = {
-  //       name: "test",
-  //       color: pickedColor,
-  //     };
-
-  //     setNewPalette((state) => [...state, newColor]);
-  //   };
+  useEffect(() => {
+    ValidatorForm.addValidationRule("isNameUnique", (enteredName) => {
+      return newPalette.every(
+        ({ name }) => name.toLowerCase() !== enteredName.toLowerCase()
+      );
+    });
+    ValidatorForm.addValidationRule("isColorUnique", () => {
+      return newPalette.every(({ color }) => color !== pickedColor);
+    });
+  });
 
   return (
-    <ValidatorForm onSubmit={handleSubmit}>
+    <ValidatorForm onSubmit={handleSubmit} instantValidate={false}>
       <ChromePicker
         color={pickedColor}
         onChange={handlePickedColorUpdate}
         disableAlpha={true}
       />
-      <TextValidator value={inputText} onChange={handleInputChange} />
+      <TextValidator
+        value={inputText}
+        placeholder="Color Name"
+        onChange={handleInputChange}
+        validators={["required", "isNameUnique", "isColorUnique"]}
+        errorMessages={[
+          "Enter color name",
+          "Color name already taken",
+          "Color is already in the palette",
+        ]}
+      />
       <Button
         variant="contained"
         className={classes.AddColorButton}
-        type='submit'
-        // style={{ backgroundColor: pickedColor }}
-        // onClick={handleAddColor}
+        type="submit"
+        disabled={isPaletteFull}
       >
-        Add Color
+        {isPaletteFull ? "Palette Full" : "Add Color"}
       </Button>
     </ValidatorForm>
   );
