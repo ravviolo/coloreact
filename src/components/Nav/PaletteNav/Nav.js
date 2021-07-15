@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import PaletteContext from "../../context/PaletteContext";
-import UIContextProvider from "../../context/UIContext";
+// import PaletteContext from "../../context/PaletteContext";
+import PaletteContext from '../../../context/PaletteContext'
+import UIContext from "../../../context/UIContext";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -14,7 +15,7 @@ import { useStyles } from "./Nav.styles";
 
 const Nav = ({ shadesPalette }) => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
-  const { setIsOpenSB } = useContext(UIContextProvider);
+  const { setOpenSB } = useContext(UIContext);
   const classes = useStyles();
 
   const handleSliderChange = (e) => {
@@ -22,13 +23,15 @@ const Nav = ({ shadesPalette }) => {
   };
   const handleSelectChange = (e) => {
     setFormat(e.target.value);
-    setIsOpenSB(true);
+    setOpenSB(true);
   };
 
   return (
     <nav className={classes.Nav}>
       <div className={classes.LogoContainer}>
-        <Link className={classes.Logo} to="/">coloreact</Link>
+        <Link className={classes.Logo} to="/">
+          coloreact
+        </Link>
       </div>
       {!shadesPalette && (
         <div className={classes.SliderContainer}>
