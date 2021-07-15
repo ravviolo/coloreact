@@ -21,7 +21,7 @@ const Palette = () => {
       <div className={classes.drawerHeader} />
       <div className={classes.ColorsContainer}>
         {newPalette.map((newColor) => (
-          <DragColorBox color={newColor.color} name={newColor.name} />
+          <DragColorBox color={newColor.color} name={newColor.name} id={newColor.id} />
         ))}
       </div>
     </main>

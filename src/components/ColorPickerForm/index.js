@@ -23,6 +23,7 @@ const ColorPickerForm = () => {
     const newColor = {
       name: inputText,
       color: pickedColor,
+      id: inputText,
     };
     setNewPalette((state) => [...state, newColor]);
     setInputText("");
