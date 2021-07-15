@@ -13,15 +13,17 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "./Nav.styles";
 
 const Nav = () => {
-  const { openDR, setOpenDR, setOpenSaveDialog } = useContext(UIContext);
+  const { openDR, setOpenDR, setOpenSaveDialog, setOpenLoadDialog } =
+    useContext(UIContext);
   const history = useHistory();
   const classes = useStyles();
 
   const handleDrawerOpen = () => setOpenDR(true);
   const handleGoBack = () => history.goBack();
   const openSaveDialog = () => {
-    setOpenSaveDialog(true)
-  }
+    setOpenSaveDialog(true);
+  };
+  const openLoadDialog = () => setOpenLoadDialog(true);
 
   return (
     <>
@@ -57,6 +59,7 @@ const Nav = () => {
                 className={classes.Button}
                 variant="contained"
                 color="primary"
+                onClick={openLoadDialog}
               >
                 Load Palette
               </Button>

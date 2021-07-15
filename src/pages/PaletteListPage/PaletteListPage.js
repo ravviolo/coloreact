@@ -3,12 +3,12 @@ import PaletteContext from "../../context/PaletteContext";
 import { useHistory } from "react-router";
 
 import PalettePreview from "../../components/PalettePreview/PalettePreview";
-import {useStyles} from "./PaletteListPage.styles";
+import { useStyles } from "./PaletteListPage.styles";
 
 const PaletteListPage = () => {
   const { palettes } = useContext(PaletteContext);
   const history = useHistory();
-  const classes=useStyles()
+  const classes = useStyles();
 
   const handleCreatePalette = () => history.push("/create-palette");
   return (
@@ -21,7 +21,10 @@ const PaletteListPage = () => {
         </header>
         <div className={classes.PaletteList}>
           {palettes.map((palette) => (
-            <PalettePreview {...palette} />
+            <PalettePreview
+              {...palette}
+              goToPalette={() => history.push(`/palette/${palette.id}`)}
+            />
           ))}
         </div>
       </div>

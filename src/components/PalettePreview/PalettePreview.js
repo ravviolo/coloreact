@@ -1,12 +1,10 @@
-import { useHistory } from "react-router-dom";
+import clsx from "clsx";
 import { useStyles } from "./PalettePreview.styles";
 
-const PalettePreview = ({ id, paletteName, emoji, colors }) => {
-  const history = useHistory();
+const PalettePreview = ({ paletteName, emoji, colors, goToPalette, notChosen }) => {
   const classes = useStyles();
-  const handleRedirect = () => history.push(`/palette/${id}`);
   return (
-    <div className={classes.Card} onClick={handleRedirect}>
+    <div className={clsx(classes.Card, notChosen && classes.Overlay)} onClick={goToPalette}>
       <div className={classes.ColorContainer}>
         {colors.map((color) => (
           <div
