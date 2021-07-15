@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UIContext from "../../../context/UIContext";
 import PaletteContext from "../../../context/PaletteContext";
 import { ChromePicker } from "react-color";
@@ -12,13 +12,22 @@ import { useStyles } from "./DrawerComponent.styles";
 
 const DrawerComponent = () => {
   const { openDR, setOpenDR } = useContext(UIContext);
-  const { pickedColor, setPickedColor } = useContext(PaletteContext);
+  const [pickedColor, setPickedColor] = useState("teal");
+  const { setNewPalette } = useContext(PaletteContext);
   const classes = useStyles();
 
   const handleDrawerClose = () => setOpenDR(false);
   const handlePickedColorUpdate = (currentColor) =>
     setPickedColor(currentColor.hex);
 
+  const handleAddColor = () => {
+    const newColor = {
+      name: "test",
+      color: pickedColor,
+    };
+
+    setNewPalette((state) => [...state, newColor]);
+  };
   return (
     <Drawer
       className={classes.drawer}
@@ -52,7 +61,11 @@ const DrawerComponent = () => {
         onChange={handlePickedColorUpdate}
         disableAlpha={true}
       />
-      <Button variant="contained" style={{ backgroundColor: pickedColor }}>
+      <Button
+        variant="contained"
+        style={{ backgroundColor: pickedColor }}
+        onClick={handleAddColor}
+      >
         Add Color
       </Button>
     </Drawer>

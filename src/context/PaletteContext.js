@@ -9,8 +9,6 @@ const PaletteContext = React.createContext({
   setLevel: () => {},
   getPalette: () => {},
   getShades: () => {},
-  pickedColor: "teal",
-  setPickedColor: () => {},
   newPalette: [],
   setNewPalette: () => {}, 
 });
@@ -18,7 +16,6 @@ const PaletteContext = React.createContext({
 export const PaletteContextProvider = ({ children }) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
-  const [pickedColor, setPickedColor] = useState("teal");
   const [newPalette, setNewPalette] = useState([
     { name: "pink", color: "pink" },
     { name: "blue", color: "blue" },
@@ -51,8 +48,6 @@ export const PaletteContextProvider = ({ children }) => {
     setFormat,
     getPalette,
     getShades,
-    pickedColor,
-    setPickedColor,
     newPalette,
     setNewPalette
   };
