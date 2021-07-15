@@ -1,21 +1,16 @@
-import * as Styled from "./CopyModal.styles";
+import { useStyles } from "./CopyModal.styles";
 
-const CopyOverlay = ({ bgColor, copied }) => {
-  return <Styled.Overlay bgColor={bgColor} copied={copied} />;
-};
-const OverlayContent = ({ bgColor, copied }) => {
-  return (
-    <Styled.Content copied={copied} bgColor={bgColor}>
-      <h1>copied</h1>
-      <p>{bgColor}</p>
-    </Styled.Content>
-  );
-};
-const CopyModal = ({ bgColor, copied }) => {
+
+const CopyModal = ({ bgColor: color, copied }) => {
+  const classes = useStyles({ copied, color });
+
   return (
     <>
-      <CopyOverlay bgColor={bgColor} copied={copied} />
-      <OverlayContent bgColor={bgColor} copied={copied} />
+      <div className={classes.Overlay} />
+      <div className={classes.Content}>
+        <h1>copied</h1>
+        <p>{color}</p>
+      </div>
     </>
   );
 };

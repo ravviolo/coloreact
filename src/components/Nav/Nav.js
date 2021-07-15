@@ -9,11 +9,13 @@ import "rc-slider/assets/index.css";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
-import * as Styled from "./Nav.styles";
+// import * as Styled from "./Nav.styles";
+import { useStyles } from "./Nav.styles";
 
 const Nav = ({ shadesPalette }) => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
   const { setIsOpenSB } = useContext(UIContextProvider);
+  const classes = useStyles();
 
   const handleSliderChange = (e) => {
     setLevel(e);
@@ -24,12 +26,12 @@ const Nav = ({ shadesPalette }) => {
   };
 
   return (
-    <Styled.Nav>
-      <Styled.LogoContainer>
-        <Link to="/">coloreact</Link>
-      </Styled.LogoContainer>
+    <nav className={classes.Nav}>
+      <div className={classes.LogoContainer}>
+        <Link className={classes.Logo} to="/">coloreact</Link>
+      </div>
       {!shadesPalette && (
-        <Styled.SliderContainer>
+        <div className={classes.SliderContainer}>
           <span>Level: {level}</span>
           <Slider
             defaultValue={level}
@@ -38,10 +40,10 @@ const Nav = ({ shadesPalette }) => {
             step={100}
             onAfterChange={handleSliderChange}
           />
-        </Styled.SliderContainer>
+        </div>
       )}
 
-      <Styled.SelectContainer>
+      <div className={classes.SelectContainer}>
         <Select
           labelId="color-format-select-label"
           id="color-format-select"
@@ -52,8 +54,8 @@ const Nav = ({ shadesPalette }) => {
           <MenuItem value="rgb">RGB: rgb(255, 255, 255)</MenuItem>
           <MenuItem value="hsl">HSL: hsl(0, 0%, 100%)</MenuItem>
         </Select>
-      </Styled.SelectContainer>
-    </Styled.Nav>
+      </div>
+    </nav>
   );
 };
 

@@ -1,63 +1,57 @@
-import styled from "styled-components";
 import { TEXT_CONTRAST } from "../../constants/textContast";
+import { makeStyles } from "@material-ui/core/styles";
 
-
-export const ColorBox = styled.div`
-  height: ${({ isShadesPalette }) => (isShadesPalette ? "50%" : "25%")};
-  width: 20%;
-  background-color: ${(props) => props.bgColor};
-  position: relative;
-  color: ${TEXT_CONTRAST};
-  cursor: pointer;
-`;
-
-export const CenteredContainer = styled.span`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1rem;
-`;
-
-export const InfoContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .colorbox__name {
-    letter-spacing: 1px;
-    padding-left: 0.5em;
-    text-transform: uppercase;
-  }
-`;
-
-export const Button = styled.button`
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1rem;
-  border: none;
-  padding: 0.4em 0.8em;
-  background-color: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  color: ${TEXT_CONTRAST};
-`;
-
-export const CopyButton = styled(Button)`
-  padding: 0.6em 1.5em;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  ${ColorBox}:hover & {
-    opacity: 1;
-  }
-`;
-
-export const LinkButton = styled(CopyButton)`
-  opacity: 0.8;
-  ${ColorBox}:hover & {
-    opacity: 1;
-  }
-`;
+export const useStyles = makeStyles({
+  ColorBox: {
+    height: (props) => (props.isShadesPalette ? "50%" : "25%"),
+    width: "20%",
+    backgroundColor: (props) => props.color,
+    position: "relative",
+    ...TEXT_CONTRAST,
+  },
+  CenteredContainer: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    fontSize: "1rem",
+  },
+  BottomContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  ColorName: {
+    letterSpacing: 1,
+    paddingLeft: "0.5em",
+    textTransform: "uppercase",
+  },
+  Button: {
+    textTransform: "uppercase",
+    textDecoration: "none",
+    fontSize: "1rem",
+    border: "none",
+    padding: "0.4em 0.8em",
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    cursor: "pointer",
+    ...TEXT_CONTRAST,
+  },
+  CenteredButton: {
+    padding: "0.6em 1.5em",
+    opacity: 0,
+    transition: "opacity 0.3s ease-in-out",
+    "$ColorBox:hover &": {
+      opacity: 1,
+    },
+  },
+  LinkButton: {
+    opacity: 0.8,
+    "$ColorBox:hover &": {
+      opacity: 1,
+    },
+  },
+});

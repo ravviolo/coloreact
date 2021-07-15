@@ -1,15 +1,17 @@
-import styled from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
 
-export const Footer = styled.footer`
-  height: 4vh;
-  width: 100vw;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
-`;
-export const PaletteName = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-  margin-right: 1rem;
-`;
+export const useStyles = makeStyles({
+  Footer: {
+    height: "4vh",
+    width: "100vw",
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    paddingRight: "1rem",
+  },
+  PaletteName: {
+    fontSize: "1rem",
+    fontWeight: 700,
+    marginRight: "1rem",
+  },
+});

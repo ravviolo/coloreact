@@ -3,27 +3,29 @@ import PaletteContext from "../../context/PaletteContext";
 import { useHistory } from "react-router";
 
 import PalettePreview from "../../components/PalettePreview/PalettePreview";
-import * as Styled from "./PaletteListPage.styles";
+import {useStyles} from "./PaletteListPage.styles";
 
 const PaletteListPage = () => {
   const { palettes } = useContext(PaletteContext);
   const history = useHistory();
+  const classes=useStyles()
+
   const handleCreatePalette = () => history.push("/create-palette");
   return (
-    <Styled.PageContainer>
-      <Styled.PageContent>
-        <Styled.Header>
-          <h1>Coloreact</h1>
+    <div className={classes.PageContainer}>
+      <div className={classes.PageContent}>
+        <header className={classes.Header}>
+          <h1 className={classes.Logo}>Coloreact</h1>
           <span onClick={handleCreatePalette}>Create Palette</span>
           <span>Reset</span>
-        </Styled.Header>
-        <Styled.PaletteList>
+        </header>
+        <div className={classes.PaletteList}>
           {palettes.map((palette) => (
             <PalettePreview {...palette} />
           ))}
-        </Styled.PaletteList>
-      </Styled.PageContent>
-    </Styled.PageContainer>
+        </div>
+      </div>
+    </div>
   );
 };
 

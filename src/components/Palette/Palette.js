@@ -3,10 +3,11 @@ import PaletteContext from "../../context/PaletteContext";
 import ColorBox from "../ColorBox/ColorBox";
 import ColorBoxLink from "../ColorBox/ColorBoxLink";
 
-import * as Styled from "./Palette.styles";
+import { useStyles } from "./Palette.styles";
 
 const Palette = ({ colors, shadesPalette }) => {
   const { level, format } = useContext(PaletteContext);
+  const classes = useStyles();
 
   let colorBoxes;
 
@@ -29,10 +30,12 @@ const Palette = ({ colors, shadesPalette }) => {
     ));
   }
 
-  return <Styled.Palette>
-    {colorBoxes}
-    {shadesPalette && <ColorBoxLink isShadesPalette={true}/>}
-    </Styled.Palette>;
+  return (
+    <div className={classes.Palette}>
+      {colorBoxes}
+      {shadesPalette && <ColorBoxLink isShadesPalette={true} />}
+    </div>
+  );
 };
 
 export default Palette;

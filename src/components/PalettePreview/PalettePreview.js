@@ -1,21 +1,25 @@
 import { useHistory } from "react-router-dom";
-import * as Styled from "./PalettePreview.styles";
+import { useStyles } from "./PalettePreview.styles";
 
 const PalettePreview = ({ id, paletteName, emoji, colors }) => {
   const history = useHistory();
+  const classes = useStyles();
   const handleRedirect = () => history.push(`/palette/${id}`);
   return (
-    <Styled.Card onClick={handleRedirect}>
-      <Styled.ColorContainer>
+    <div className={classes.Card} onClick={handleRedirect}>
+      <div className={classes.ColorContainer}>
         {colors.map((color) => (
-          <Styled.MiniColorBox bgColor={color} />
+          <div
+            className={classes.MiniColorBox}
+            style={{ backgroundColor: color.color }}
+          />
         ))}
-      </Styled.ColorContainer>
-      <Styled.PaletteInfo>
+      </div>
+      <div className={classes.PaletteInfo}>
         <h4>{paletteName}</h4>
         <span>{emoji}</span>
-      </Styled.PaletteInfo>
-    </Styled.Card>
+      </div>
+    </div>
   );
 };
 

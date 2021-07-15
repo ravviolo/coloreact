@@ -1,11 +1,14 @@
-import * as Styled from "./Footer.styles";
+import { useStyles } from "./Footer.styles";
 
-const Footer = ({paletteName, emoji}) => {
+const Footer = ({ paletteName, emoji }) => {
+
+  const classes = useStyles();
+
   return (
-    <Styled.Footer>
-      <Styled.PaletteName>{paletteName}</Styled.PaletteName>
+    <footer className={classes.Footer}>
+      <span className={classes.PaletteName}>{paletteName}</span>
       <span>{emoji}</span>
-    </Styled.Footer>
+    </footer>
   );
 };
 

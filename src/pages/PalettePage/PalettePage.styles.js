@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
 
-export const PalettePage = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-`;
-
-
+export const useStyles = makeStyles({
+  PalettePage: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    overflow: "hidden",
+  },
+});

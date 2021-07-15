@@ -2,15 +2,18 @@ import { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import { useStyles } from "./ColorBox.styles";
+import clsx from "clsx";
+
 import CopyModal from "../CopyModal/CopyModal";
 
-import * as Styled from "./ColorBox.styles";
+
 
 const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
-
   const [copied, setCopied] = useState(false);
   const match = useRouteMatch();
   const history = useHistory();
+  const classes = useStyles({ isShadesPalette, color });
 
   const handleCopy = () => {
     setCopied(true);
@@ -18,7 +21,7 @@ const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
       setCopied(false);
     }, 1500);
   };
-  
+
   const handleOpenShadesPalette = (e) => {
     e.stopPropagation();
     history.push(`${match.url}/${colorId}`);
@@ -27,20 +30,27 @@ const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
   return (
     <>
       <CopyToClipboard text={color} onCopy={handleCopy}>
-        <Styled.ColorBox bgColor={color} isShadesPalette={isShadesPalette}>
+        <div
+          className={classes.ColorBox}
+        >
           <CopyModal bgColor={color} copied={copied} />
-          <Styled.CenteredContainer>
-            <Styled.CopyButton bgColor={color}>copy</Styled.CopyButton>
-          </Styled.CenteredContainer>
-          <Styled.InfoContainer>
-            <span className="colorbox__name">{name}</span>
+          <div className={classes.CenteredContainer}>
+            <button className={clsx(classes.CenteredButton, classes.Button)}>
+              copy
+            </button>
+          </div>
+          <div className={classes.BottomContainer}>
+            <span className={classes.ColorName}>{name}</span>
             {!isShadesPalette && (
-              <Styled.Button onClick={handleOpenShadesPalette} bgColor={color}>
+              <button
+                className={classes.Button}
+                onClick={handleOpenShadesPalette}
+              >
                 more
-              </Styled.Button>
+              </button>
             )}
-          </Styled.InfoContainer>
-        </Styled.ColorBox>
+          </div>
+        </div>
       </CopyToClipboard>
     </>
   );

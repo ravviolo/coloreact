@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
 
-export const Palette = styled.section`
-  height: 90vh;
-  display: flex;
-  flex-wrap: wrap;
-`;
+export const useStyles = makeStyles({
+  Palette: {
+    height: '90vh',
+    display: 'flex',
+    flexWrap: 'wrap',
+  }
+})
+

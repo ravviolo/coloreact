@@ -7,12 +7,13 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 import SnackbarComponent from "../../components/UI/SnackbarComponent";
 
-import * as Styled from "./PalettePage.styles";
-import initialPalettes from "../../initialPalettes";
+import {useStyles} from "./PalettePage.styles";
+
 
 const PalettePage = ({shadesPalette}) => {
   const { getPalette, getShades } = useContext(PaletteContext);
   const {paletteId, colorId} = useParams();
+  const classes = useStyles()
 
   let palette = getPalette(paletteId)
 
@@ -23,12 +24,12 @@ const PalettePage = ({shadesPalette}) => {
 
   
   return (
-    <Styled.PalettePage>
+    <div className={classes.PalettePage}>
       <Nav shadesPalette={shadesPalette}/>
-      <Palette {...palette} shadesPalette={shadesPalette} />
+      <Palette {...palette} shadesPalette={shadesPalette}/>
       <Footer paletteName={palette.paletteName} emoji={palette.emoji}/>
       <SnackbarComponent />
-    </Styled.PalettePage>
+    </div>
   );
 };
 

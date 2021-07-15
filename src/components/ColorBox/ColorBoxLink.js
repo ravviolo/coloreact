@@ -1,15 +1,27 @@
 import { useHistory } from "react-router-dom";
-import * as Styled from "./ColorBox.styles";
+import { useStyles } from "./ColorBox.styles";
+import clsx from "clsx";
 
 const ColorBoxLink = ({ isShadesPalette }) => {
+  const classes = useStyles({ color: "black", isShadesPalette });
   const history = useHistory();
+
   const handleGoBack = () => history.goBack();
+
   return (
-    <Styled.ColorBox onClick={handleGoBack} bgColor="black" isShadesPalette={isShadesPalette}>
-      <Styled.CenteredContainer>
-        <Styled.LinkButton bgColor="black">back</Styled.LinkButton>
-      </Styled.CenteredContainer>
-    </Styled.ColorBox>
+    <div className={classes.ColorBox} onClick={handleGoBack}>
+      <div className={classes.CenteredContainer}>
+        <button
+          className={clsx(
+            classes.LinkButton,
+            classes.Button,
+            classes.CenteredButton
+          )}
+        >
+          back
+        </button>
+      </div>
+    </div>
   );
 };
 
