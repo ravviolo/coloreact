@@ -6,9 +6,8 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "./styles";
 
 const ColorPickerForm = () => {
-  const [pickedColor, setPickedColor] = useState("teal");
   const [inputText, setInputText] = useState("");
-  const { newPalette, setNewPalette } = useContext(PaletteContext);
+  const { newPalette, setNewPalette, pickedColor, setPickedColor } = useContext(PaletteContext);
   const classes = useStyles({ color: pickedColor });
   const isPaletteFull = newPalette.length === 20;
 

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import chroma from "chroma-js";
 import UIContext from "../../../context/UIContext";
 import PaletteContext from "../../../context/PaletteContext";
 import Drawer from "@material-ui/core/Drawer";
@@ -13,11 +14,20 @@ import { useStyles } from "./DrawerComponent.styles";
 
 const DrawerComponent = () => {
   const { openDR, setOpenDR } = useContext(UIContext);
-  const { setNewPalette } = useContext(PaletteContext);
+  const { newPalette, setNewPalette, setPickedColor } =
+    useContext(PaletteContext);
   const classes = useStyles();
 
   const handleDrawerClose = () => setOpenDR(false);
-  const handleClearPalette = () => setNewPalette([])
+  const handleClear = () => setNewPalette([]);
+  const handleRandom = () => {
+    const randomColor = chroma.random().hex();
+    if (newPalette.some(({ color }) => color === randomColor)) {
+      this.handleRandom();
+    } else {
+      setPickedColor(randomColor);
+    }
+  };
 
   return (
     <Drawer
@@ -39,10 +49,10 @@ const DrawerComponent = () => {
           Design Your Palette
         </Typography>
         <div className={classes.ButtonContainer}>
-          <Button variant="contained" color="secondary" onClick={handleClearPalette}>
+          <Button variant="contained" color="secondary" onClick={handleClear}>
             Clear Palette
           </Button>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" onClick={handleRandom}>
             Get Random
           </Button>
         </div>

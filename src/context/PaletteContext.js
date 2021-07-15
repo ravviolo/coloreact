@@ -11,6 +11,8 @@ const PaletteContext = React.createContext({
   getShades: () => {},
   newPalette: [],
   setNewPalette: () => {}, 
+  pickedColor:'teal',
+  setPickedColor: () => {}
 });
 
 export const PaletteContextProvider = ({ children }) => {
@@ -20,6 +22,8 @@ export const PaletteContextProvider = ({ children }) => {
     { name: "pink", color: "pink" },
     { name: "blue", color: "blue" },
   ]);
+  const [pickedColor, setPickedColor] = useState("teal");
+
 
   const getPalette = (paletteId) => {
     const filteredPalette = initialPalettes.find(
@@ -49,7 +53,9 @@ export const PaletteContextProvider = ({ children }) => {
     getPalette,
     getShades,
     newPalette,
-    setNewPalette
+    setNewPalette,
+    pickedColor,
+    setPickedColor
   };
   return (
     <PaletteContext.Provider value={contextValue}>
