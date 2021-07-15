@@ -16,6 +16,7 @@ const PaletteContext = React.createContext({
 });
 
 export const PaletteContextProvider = ({ children }) => {
+  const [palettes, setPalettes] = useState(initialPalettes)
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
   const [newPalette, setNewPalette] = useState([
@@ -26,7 +27,7 @@ export const PaletteContextProvider = ({ children }) => {
 
 
   const getPalette = (paletteId) => {
-    const filteredPalette = initialPalettes.find(
+    const filteredPalette = palettes.find(
       (palette) => palette.id === paletteId
     );
     return generatePalette(filteredPalette);
@@ -45,7 +46,8 @@ export const PaletteContextProvider = ({ children }) => {
   };
 
   const contextValue = {
-    palettes: initialPalettes,
+    palettes,
+    setPalettes,
     level,
     setLevel,
     format,

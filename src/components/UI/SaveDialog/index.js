@@ -1,7 +1,10 @@
 import { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import UIContext from "../../../context/UIContext";
 import PaletteContext from "../../../context/PaletteContext";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from "emoji-mart";
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -13,17 +16,35 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 const SaveDialog = () => {
   const { openSaveDialog, setOpenSaveDialog } = useContext(UIContext);
-  const { palettes } = useContext(PaletteContext);
+  const [openEmoji, setOpenEmoji] = useState(false);
+  const { palettes, newPalette, setPalettes } = useContext(PaletteContext);
   const [enteredName, setEnteredName] = useState("");
+  const [emoji, setEmoji] = useState(null);
+  const history = useHistory();
 
   const handleClose = () => {
     setOpenSaveDialog(false);
   };
   const handleSubmit = () => {
     setOpenSaveDialog(false);
-    //open emoji dialog
+    setOpenEmoji(true);
   };
+
+  const closeEmoji = () => setOpenEmoji(false);
   const handleInputChange = (e) => setEnteredName(e.target.value);
+  const handleSave = () => {
+   
+    const createdPalette = {
+      paletteName: enteredName,
+      id: enteredName.toLowerCase().replace(/\s/g, "-"),
+      emoji: emoji.native,
+      colors: newPalette,
+    };
+    console.log(createdPalette)
+    setPalettes((state) => [...state, createdPalette]);
+    closeEmoji();
+    history.replace("/");
+  };
 
   useEffect(() => {
     ValidatorForm.addValidationRule("isNameUnique", () => {
@@ -39,10 +60,12 @@ const SaveDialog = () => {
       <Dialog
         open={openSaveDialog}
         onClose={handleClose}
-        aria-labelledby="save-modal-title"
+        aria-labelledby="save-modal-palette-name-title"
       >
         <ValidatorForm onSubmit={handleSubmit} instantValidate={false}>
-          <DialogTitle id="save-modal-title">Choose a Palette Name</DialogTitle>
+          <DialogTitle id="save-modal-palette-name-title">
+            Choose a Palette Name
+          </DialogTitle>
           <DialogContent>
             <DialogContentText>
               You have chosen some lovely colors!
@@ -73,6 +96,28 @@ const SaveDialog = () => {
             </Button>
           </DialogActions>
         </ValidatorForm>
+      </Dialog>
+      <Dialog
+        open={openEmoji}
+        onClose={closeEmoji}
+        aria-labelledby="save-modal-emoji-title"
+      >
+        <DialogTitle id="save-modal-emoji-title">Choose an Emoji</DialogTitle>
+        <DialogContent>
+          <Picker
+            title={emoji ? emoji["short_names"][0] : "Pick your emoji!"}
+            emoji={emoji ? emoji.id : "point_up"}
+            onSelect={setEmoji}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeEmoji} color="primary">
+            Cancel
+          </Button>
+          <Button color="primary" variant="contained" onClick={handleSave} disabled={!emoji}>
+            Save
+          </Button>
+        </DialogActions>
       </Dialog>
     </div>
   );
