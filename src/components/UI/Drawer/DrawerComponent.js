@@ -13,9 +13,11 @@ import { useStyles } from "./DrawerComponent.styles";
 
 const DrawerComponent = () => {
   const { openDR, setOpenDR } = useContext(UIContext);
+  const { setNewPalette } = useContext(PaletteContext);
   const classes = useStyles();
 
   const handleDrawerClose = () => setOpenDR(false);
+  const handleClearPalette = () => setNewPalette([])
 
   return (
     <Drawer
@@ -37,7 +39,7 @@ const DrawerComponent = () => {
           Design Your Palette
         </Typography>
         <div className={classes.ButtonContainer}>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" onClick={handleClearPalette}>
             Clear Palette
           </Button>
           <Button variant="contained" color="primary">
