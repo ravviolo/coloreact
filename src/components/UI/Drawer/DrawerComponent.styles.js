@@ -18,4 +18,25 @@ export const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   },
+  DrawerContent: {
+    height: '100%',
+    width: '90%',
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  Title: {
+    fontSize: '2.5rem',
+  },
+  ButtonContainer: {
+    width: '100%',
+    display: 'flex',
+    margin: '1em 0',
+    '& > *': {
+      margin: '0 0.5em',
+      flexGrow: 1
+    }
+  }
 }));

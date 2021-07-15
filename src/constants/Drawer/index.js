@@ -1,2 +1,2 @@
-const DRAWER_WIDTH = 350;
+const DRAWER_WIDTH = 300;
 export default DRAWER_WIDTH

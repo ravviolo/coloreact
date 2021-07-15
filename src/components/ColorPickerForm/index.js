@@ -9,7 +9,7 @@ const ColorPickerForm = () => {
   const [pickedColor, setPickedColor] = useState("teal");
   const [inputText, setInputText] = useState("");
   const { newPalette, setNewPalette } = useContext(PaletteContext);
-  const classes = useStyles({ pickedColor });
+  const classes = useStyles({ color: pickedColor });
   const isPaletteFull = newPalette.length === 20;
 
   const handlePickedColorUpdate = (currentColor) => {
@@ -41,13 +41,15 @@ const ColorPickerForm = () => {
   });
 
   return (
-    <ValidatorForm onSubmit={handleSubmit} instantValidate={false}>
+    <ValidatorForm onSubmit={handleSubmit} instantValidate={false} className={classes.Form}>
       <ChromePicker
         color={pickedColor}
         onChange={handlePickedColorUpdate}
         disableAlpha={true}
+        className={classes.ColorPicker}
       />
       <TextValidator
+      className={classes.Input}
         value={inputText}
         placeholder="Color Name"
         onChange={handleInputChange}
@@ -63,6 +65,7 @@ const ColorPickerForm = () => {
         type="submit"
         disabled={isPaletteFull}
         style={{ backgroundColor: pickedColor }}
+        className={classes.Button}
       >
         {isPaletteFull ? "Palette Full" : "Add Color"}
       </Button>
