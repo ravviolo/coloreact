@@ -76,6 +76,7 @@ const NewPalettePage = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+  const [currentColor, setCurrentColor] = useState('pink')
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -84,7 +85,7 @@ const NewPalettePage = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+const handleUpdateCurrentColor = (pickedColor) => setCurrentColor(pickedColor.hex)
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -134,8 +135,8 @@ const NewPalettePage = () => {
             Get Random
           </Button>
         </div>
-        <ChromePicker />
-        <Button variant='contained'>Add Color</Button>
+        <ChromePicker color = {currentColor} onChange={handleUpdateCurrentColor} disableAlpha={true} />
+        <Button variant='contained' style={{backgroundColor:currentColor}}>Add Color</Button>
       </Drawer>
       <main
         className={clsx(classes.content, {
