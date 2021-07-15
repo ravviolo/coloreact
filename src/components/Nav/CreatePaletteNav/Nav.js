@@ -13,13 +13,16 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "./Nav.styles";
 
 const Nav = () => {
-  const { openDR, setOpenDR } = useContext(UIContext);
-  const history = useHistory()
+  const { openDR, setOpenDR, setOpenSaveDialog } = useContext(UIContext);
+  const history = useHistory();
   const classes = useStyles();
 
   const handleDrawerOpen = () => setOpenDR(true);
-  const handleGoBack = () => history.goBack()
-  
+  const handleGoBack = () => history.goBack();
+  const openSaveDialog = () => {
+    setOpenSaveDialog(true)
+  }
+
   return (
     <>
       <CssBaseline />
@@ -42,22 +45,25 @@ const Nav = () => {
           </IconButton>
           <div className={classes.ButtonContainer}>
             <div>
-            <Button
-              className={classes.Button}
-              variant="contained"
-              color="secondary"
-            >
-              Save Palette
-            </Button>
-            <Button
-              className={classes.Button}
-              variant="contained"
-              color="primary"
-            >
-              Load Palette
-            </Button>
+              <Button
+                className={classes.Button}
+                variant="contained"
+                color="secondary"
+                onClick={openSaveDialog}
+              >
+                Save Palette
+              </Button>
+              <Button
+                className={classes.Button}
+                variant="contained"
+                color="primary"
+              >
+                Load Palette
+              </Button>
             </div>
-            <Button className={classes.Button} onClick={handleGoBack}>Back</Button>
+            <Button className={classes.Button} onClick={handleGoBack}>
+              Back
+            </Button>
           </div>
         </Toolbar>
       </AppBar>

@@ -8,17 +8,22 @@ const UIContext = React.createContext({
   setOpenSB: () => {},
   openDR: false,
   setOpenDR: () => {},
+  openSaveDialog: false,
+  setOpenSaveDialog: ()=>{}
 
 });
 
 export const UIContextProvider = ({ children }) => {
   const [openSB, setOpenSB] = useState(false);
   const [openDR, setOpenDR] = useState(false);
+  const [openSaveDialog, setOpenSaveDialog] = useState(false)
   const contextValue = {
     openSB,
     setOpenSB,
     openDR,
-    setOpenDR
+    setOpenDR,
+    openSaveDialog,
+    setOpenSaveDialog
   };
   return (
     <UIContext.Provider value={contextValue}>{children}</UIContext.Provider>
