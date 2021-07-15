@@ -10,21 +10,17 @@ const PaletteContext = React.createContext({
   getPalette: () => {},
   getShades: () => {},
   newPalette: [],
-  setNewPalette: () => {}, 
-  pickedColor:'teal',
-  setPickedColor: () => {}
+  setNewPalette: () => {},
+  pickedColor: "teal",
+  setPickedColor: () => {},
 });
 
 export const PaletteContextProvider = ({ children }) => {
-  const [palettes, setPalettes] = useState(initialPalettes)
+  const [palettes, setPalettes] = useState(initialPalettes);
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
-  const [newPalette, setNewPalette] = useState([
-    { name: "pink", color: "pink" },
-    { name: "blue", color: "blue" },
-  ]);
+  const [newPalette, setNewPalette] = useState(initialPalettes[0].colors);
   const [pickedColor, setPickedColor] = useState("teal");
-
 
   const getPalette = (paletteId) => {
     const filteredPalette = palettes.find(
@@ -57,7 +53,7 @@ export const PaletteContextProvider = ({ children }) => {
     newPalette,
     setNewPalette,
     pickedColor,
-    setPickedColor
+    setPickedColor,
   };
   return (
     <PaletteContext.Provider value={contextValue}>
