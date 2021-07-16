@@ -4,10 +4,12 @@ import PalettePage from "./pages/PalettePage/PalettePage";
 import "./App.css";
 import PaletteListPage from "./pages/PaletteListPage/PaletteListPage";
 import NewPalettePage from "./pages/NewPalettePage/NewPalettePage";
+import { useStyles } from "./App.styles.js";
 
 function App() {
+  const classes = useStyles();
   return (
-    <main className="App">
+    <main className={classes.App}>
       <Route path="/" exact>
         <PaletteListPage />
       </Route>
