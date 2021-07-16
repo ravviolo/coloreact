@@ -8,12 +8,13 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: (props) => props.color,
     position: "relative",
     cursor: "pointer",
+    fontSize: "0.8rem",
     ...TEXT_CONTRAST,
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down("md")]: {
       width: "25%",
       height: (props) => (props.isShadesPalette ? "33.3333%" : "20%"),
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       width: "50%",
       height: (props) => (props.isShadesPalette ? "20%" : "10%"),
     },
@@ -27,7 +28,6 @@ export const useStyles = makeStyles((theme) => ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    fontSize: "1rem",
   },
   BottomContainer: {
     position: "absolute",
@@ -39,22 +39,22 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   ColorName: {
-    letterSpacing: 1,
+    letterSpacing: 2,
     paddingLeft: "0.5em",
     textTransform: "uppercase",
   },
   Button: {
     textTransform: "uppercase",
     textDecoration: "none",
-    fontSize: "1rem",
+    fontSize: "0.8rem",
     border: "none",
-    padding: "0.4em 0.8em",
+    padding: "0.5em 1em",
     backgroundColor: "rgba(255, 255, 255, 0.3)",
     cursor: "pointer",
     ...TEXT_CONTRAST,
   },
   CenteredButton: {
-    padding: "0.6em 1.5em",
+    padding: ".8em 2em",
     opacity: 0,
     transition: "opacity 0.3s ease-in-out",
     "$ColorBox:hover &": {

@@ -36,7 +36,8 @@ export const useStyles = makeStyles({
     },
 
     "& p": {
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
+      letterSpacing: 1,
       fontWeight: 100,
       marginTop: "1.2em",
       ...TEXT_CONTRAST,

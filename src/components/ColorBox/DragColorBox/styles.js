@@ -13,11 +13,11 @@ export const useStyles = makeStyles((theme) => ({
         opacity: 1,
       },
     },
-    [theme.breakpoints.down("lg")]: {
+    [theme.breakpoints.down("md")]: {
       width: "25%",
       height: (props) => (props.isShadesPalette ? "33.3333%" : "20%"),
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       width: "50%",
       height: (props) => (props.isShadesPalette ? "20%" : "10%"),
     },
@@ -37,6 +37,8 @@ export const useStyles = makeStyles((theme) => ({
     padding: "0.5em 1em",
     ...TEXT_CONTRAST,
     textTransform: "uppercase",
+    fontSize: "0.8rem",
+    letterSpacing: 2,
   },
   DeleteIcon: {
     opacity: 0,

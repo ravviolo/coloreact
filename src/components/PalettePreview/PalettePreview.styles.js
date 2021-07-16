@@ -33,6 +33,7 @@ export const useStyles = makeStyles({
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: "0.25em",
+    fontSize: "1rem",
 
     "& span": {
       fontSize: "1.3rem",
@@ -41,5 +42,5 @@ export const useStyles = makeStyles({
   Overlay: {
     opacity: "0.6",
     backgroundColor: "rgba(255, 255, 255, 0.3)",
-  }
+  },
 });
