@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   "@global": {
     "@keyframes rainbow": {
       "0%": { backgroundPosition: "0% 82%" },
@@ -10,36 +10,53 @@ export const useStyles = makeStyles({
   },
   Nav: {
     height: "6vh",
+    maxWidth: '100vw',
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    [theme.breakpoints.down("xs")]: {
+      flexWrap: "wrap",
+      marginBottom: '2rem'
+    },
   },
   SliderContainer: {
     height: "100%",
     width: "30%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     margin: "0 auto",
     position: "relative",
 
     "& span": {
       position: "absolute",
       left: "-20%",
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       opacity: 0,
       transition: "opacity 0.3s ease-in-out",
+      [theme.breakpoints.down("md")]: {
+        fontSize: ".8rem",
+      },
     },
 
     "&:hover": {
       "& span": {
         opacity: 1,
+        [theme.breakpoints.down("xs")]: {
+          opacity: 0,
+        },
       },
+    },
+
+    [theme.breakpoints.down("xs")]: {
+      order: 2,
+      width: "80vw",
+      alignItems:'flex-start'
     },
   },
   // Overwrite Slider Component styles
   "& .rc-slider": {
-    width: "80%",
+    width: "70%",
   },
   "& .rc-slider-track": {
     background: "transparent",
@@ -64,6 +81,7 @@ export const useStyles = makeStyles({
     display: "grid",
     placeItems: "center",
     cursor: "pointer",
+    padding: "0 2em",
 
     "&:hover": {
       "& $Logo": {
@@ -89,4 +107,4 @@ export const useStyles = makeStyles({
   SelectContainer: {
     marginRight: "1em",
   },
-});
+}));
