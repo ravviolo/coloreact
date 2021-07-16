@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import PaletteContext from "../../../context/PaletteContext";
+import { SortableElement } from "react-sortable-hoc";
 
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import { useStyles } from "./styles";
 
-const DragColorBox = ({ color, name, id }) => {
+const DragColorBox = ({ color, name}) => {
   const { newPalette, setNewPalette } = useContext(PaletteContext);
   const classes = useStyles({ color });
 
   const handleDelete = () => {
-    const updatedPalette = newPalette.filter((color) => color.id !== id);
+    const updatedPalette = newPalette.filter((color) => color.name !== name);
     setNewPalette(updatedPalette);
+
   };
   return (
     <div className={classes.ColorBox}>
@@ -25,4 +27,4 @@ const DragColorBox = ({ color, name, id }) => {
   );
 };
 
-export default DragColorBox;
+export default SortableElement(DragColorBox);
