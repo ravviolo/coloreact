@@ -28,6 +28,7 @@ export const PaletteContextProvider = ({ children }) => {
     );
     return generatePalette(filteredPalette);
   };
+  
 
   const getShades = (palette, targetColorId) => {
     let shades = [];
@@ -40,6 +41,8 @@ export const PaletteContextProvider = ({ children }) => {
     }
     return shades;
   };
+
+  const resetNewPalette = () => setNewPalette(initialPalettes[0].colors)
 
   const contextValue = {
     palettes,
@@ -54,6 +57,7 @@ export const PaletteContextProvider = ({ children }) => {
     setNewPalette,
     pickedColor,
     setPickedColor,
+    resetNewPalette
   };
   return (
     <PaletteContext.Provider value={contextValue}>

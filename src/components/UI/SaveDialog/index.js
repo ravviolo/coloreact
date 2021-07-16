@@ -17,7 +17,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 const SaveDialog = () => {
   const { openSaveDialog, setOpenSaveDialog } = useContext(UIContext);
   const [openEmoji, setOpenEmoji] = useState(false);
-  const { palettes, newPalette, setPalettes } = useContext(PaletteContext);
+  const { palettes, newPalette, setPalettes, resetNewPalette } =
+    useContext(PaletteContext);
   const [enteredName, setEnteredName] = useState("");
   const [emoji, setEmoji] = useState(null);
   const history = useHistory();
@@ -33,16 +34,15 @@ const SaveDialog = () => {
   const closeEmoji = () => setOpenEmoji(false);
   const handleInputChange = (e) => setEnteredName(e.target.value);
   const handleSave = () => {
-   
     const createdPalette = {
       paletteName: enteredName,
       id: enteredName.toLowerCase().replace(/\s/g, "-"),
       emoji: emoji.native,
       colors: newPalette,
     };
-    console.log(createdPalette)
     setPalettes((state) => [...state, createdPalette]);
     closeEmoji();
+    resetNewPalette();
     history.replace("/");
   };
 
@@ -114,7 +114,12 @@ const SaveDialog = () => {
           <Button onClick={closeEmoji} color="primary">
             Cancel
           </Button>
-          <Button color="primary" variant="contained" onClick={handleSave} disabled={!emoji}>
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={handleSave}
+            disabled={!emoji}
+          >
             Save
           </Button>
         </DialogActions>
