@@ -1,13 +1,26 @@
 import { TEXT_CONTRAST } from "../../constants/textContast";
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   ColorBox: {
     height: (props) => (props.isShadesPalette ? "50%" : "25%"),
     width: "20%",
     backgroundColor: (props) => props.color,
     position: "relative",
+    cursor: "pointer",
     ...TEXT_CONTRAST,
+    [theme.breakpoints.down("lg")]: {
+      width: "25%",
+      height: (props) => (props.isShadesPalette ? "33.3333%" : "20%"),
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+      height: (props) => (props.isShadesPalette ? "20%" : "10%"),
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+      height: (props) => (props.isShadesPalette ? "10%" : "5%"),
+    },
   },
   CenteredContainer: {
     position: "absolute",
@@ -54,4 +67,4 @@ export const useStyles = makeStyles({
       opacity: 1,
     },
   },
-});
+}));
