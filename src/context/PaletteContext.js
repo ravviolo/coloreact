@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import initialPalettes from "../initialPalettes";
 import generatePalette from "../helpers/colorHelper";
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 const PaletteContext = React.createContext({
   palettes: [],
@@ -16,7 +17,10 @@ const PaletteContext = React.createContext({
 });
 
 export const PaletteContextProvider = ({ children }) => {
-  const [palettes, setPalettes] = useState(initialPalettes);
+  const [palettes, setPalettes] = useLocalStorageState(
+    "palettes",
+    initialPalettes
+  );
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
   const [newPalette, setNewPalette] = useState(initialPalettes[0].colors);
@@ -28,7 +32,6 @@ export const PaletteContextProvider = ({ children }) => {
     );
     return generatePalette(filteredPalette);
   };
-  
 
   const getShades = (palette, targetColorId) => {
     let shades = [];
@@ -42,7 +45,7 @@ export const PaletteContextProvider = ({ children }) => {
     return shades;
   };
 
-  const resetNewPalette = () => setNewPalette(initialPalettes[0].colors)
+  const resetNewPalette = () => setNewPalette(initialPalettes[0].colors);
 
   const contextValue = {
     palettes,
@@ -57,7 +60,7 @@ export const PaletteContextProvider = ({ children }) => {
     setNewPalette,
     pickedColor,
     setPickedColor,
-    resetNewPalette
+    resetNewPalette,
   };
   return (
     <PaletteContext.Provider value={contextValue}>
