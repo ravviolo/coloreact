@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 import DRAWER_WIDTH from "../../../constants/Drawer";
 
+const drawerWidth = DRAWER_WIDTH;
+
 export const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: "flex",
@@ -18,7 +20,7 @@ export const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -DRAWER_WIDTH,
+    marginLeft: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
@@ -30,8 +32,11 @@ export const useStyles = makeStyles((theme) => ({
   ColorsContainer: {
     height: "100%",
     width: "100%",
-    display:'flex',
-    flexWrap: 'wrap',
-    alignContent: 'flex-start'
-  }
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "flex-start",
+    "@media (max-width: 389px)": {
+      marginTop: "2.3rem",
+    },
+  },
 }));

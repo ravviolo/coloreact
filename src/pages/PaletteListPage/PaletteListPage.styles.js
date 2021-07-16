@@ -28,10 +28,6 @@ export const useStyles = makeStyles((theme)=>({
     justifyContent: "space-between",
     color: "white",
     flexWrap: 'wrap',
-    // '@media (max-width: 650px)': {
-    //   flexWrap: 'wrap',
-      
-    // },
 
     "& span": {
       fontSize: "1.2rem",

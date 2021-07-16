@@ -1,14 +1,19 @@
 import { makeStyles } from "@material-ui/core/styles";
 import DRAWER_WIDTH from "../../../constants/Drawer";
 
-
+const draweWidth = DRAWER_WIDTH
 export const useStyles = makeStyles((theme) => ({
+
   drawer: {
     width: DRAWER_WIDTH,
     flexShrink: 0,
+    
   },
   drawerPaper: {
-    width: DRAWER_WIDTH,
+    width: draweWidth,
+    [theme.breakpoints.down("xs")]: {
+      width: "100vw",
+    }
   },
   drawerHeader: {
     display: "flex",
@@ -19,16 +24,17 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
   },
   DrawerContent: {
-    height: '100%',
-    width: '90%',
+    height: '100vh',
+    width: '80%',
     margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
-  },
-  Title: {
-    fontSize: '2.5rem',
+    alignItems: 'center',
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: 'flex-start',
+
+    }
   },
   ButtonContainer: {
     width: '100%',

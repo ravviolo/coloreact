@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { TEXT_CONTRAST } from "../../../constants/textContast";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   ColorBox: {
     width: "20%",
     height: "25%",
@@ -12,6 +12,18 @@ export const useStyles = makeStyles({
       "& $DeleteIcon": {
         opacity: 1,
       },
+    },
+    [theme.breakpoints.down("lg")]: {
+      width: "25%",
+      height: (props) => (props.isShadesPalette ? "33.3333%" : "20%"),
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+      height: (props) => (props.isShadesPalette ? "20%" : "10%"),
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
+      height: (props) => (props.isShadesPalette ? "10%" : "5%"),
     },
   },
   BottomContainer: {
@@ -33,4 +45,4 @@ export const useStyles = makeStyles({
       transform: "rotate(20deg)",
     },
   },
-});
+}));

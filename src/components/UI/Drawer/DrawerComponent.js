@@ -45,7 +45,7 @@ const DrawerComponent = () => {
         </IconButton>
       </div>
       <div className={classes.DrawerContent}>
-        <Typography variant="h4" noWrap className={classes.Title}>
+        <Typography variant="h4" noWrap>
           Design Your Palette
         </Typography>
         <div className={classes.ButtonContainer}>
