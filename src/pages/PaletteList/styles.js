@@ -34,6 +34,7 @@ export const useStyles = makeStyles((theme) => ({
       fontWeight: 500,
       cursor: "pointer",
       position: "relative",
+      backgroundColor: "#1f17aa",
 
       "&:after": {
         content: "''",
