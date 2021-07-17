@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-
-export const useStyles = makeStyles((theme)=>({
+export const useStyles = makeStyles((theme) => ({
   "@global": {
     "@keyframes rainbow": {
       "0%": { backgroundPosition: "0% 82%" },
@@ -16,10 +15,9 @@ export const useStyles = makeStyles((theme)=>({
   PageContent: {
     width: "60%",
     margin: "0 auto",
-    [theme.breakpoints.down('sm')]: {
-      width: '80%'
-    }
-
+    [theme.breakpoints.down("sm")]: {
+      width: "80%",
+    },
   },
   Header: {
     paddingTop: "2em",
@@ -27,7 +25,7 @@ export const useStyles = makeStyles((theme)=>({
     alignItems: "center",
     justifyContent: "space-between",
     color: "white",
-    flexWrap: 'wrap',
+    flexWrap: "wrap",
 
     "& span": {
       fontSize: "1.2rem",
@@ -61,15 +59,17 @@ export const useStyles = makeStyles((theme)=>({
     marginRight: "auto",
     textTransform: "lowercase",
     letterSpacing: 5,
-    '@media (max-width: 450px)': {
-      marginRight:'100%',
-      marginBottom: '2rem'
+    "@media (max-width: 450px)": {
+      marginRight: "100%",
+      marginBottom: "2rem",
     },
 
     "&:hover": {
+      cursor: 'pointer',
       background:
         "linear-gradient(124deg,#1ddde8,#1d64e8,#2b1de8, #641de8,#dd00f3,#b003d3,#cf07c5,#f300df,#ff2400,#e81d1d,#e8b71d,#e3e81d,#1de840)",
       backgroundClip: "text",
+      WebkitBackgroundClip: "text",
       color: "transparent",
       backgroundSize: "400% 100%",
       animationName: "$rainbow",
