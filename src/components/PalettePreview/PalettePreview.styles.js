@@ -11,9 +11,13 @@ export const useStyles = makeStyles({
     padding: "0.5em",
     cursor: "pointer",
     transition: "all 0.3s ease-in-out",
+    position: "relative",
 
     "&:hover": {
       transform: "scale(1.1)",
+      "& $DeleteIcon": {
+        opacity: 1,
+      },
     },
   },
   ColorContainer: {
@@ -43,4 +47,26 @@ export const useStyles = makeStyles({
     opacity: "0.6",
     backgroundColor: "rgba(255, 255, 255, 0.3)",
   },
+  DeleteIcon: {
+    display: "grid",
+    placeItems: "center",
+    zIndex: 10,
+    position: "absolute",
+    top: 0,
+    right: 0,
+    fontSize: "1.5rem",
+    padding: "0.2em 0.2em",
+    borderRadius: 5,
+    color: "white",
+    backgroundColor: "#e61717",
+    opacity: 0,
+    transition: "all 0.3s ease-in-out",
+    "&:hover": {
+      "& > *": {
+        transform: "rotate(20deg)",
+        transition: "all 0.3s ease-in-out",
+      },
+    },
+  },
+
 });

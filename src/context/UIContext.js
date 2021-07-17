@@ -12,6 +12,8 @@ const UIContext = React.createContext({
   setOpenSaveDialog: () => {},
   openLoadDialog: false,
   setOpenLoadDialog: () => {},
+  openDeleteDialog: false,
+  setOpenDeleteDialog: () => {}
 });
 
 export const UIContextProvider = ({ children }) => {
@@ -19,6 +21,7 @@ export const UIContextProvider = ({ children }) => {
   const [openDR, setOpenDR] = useState(false);
   const [openSaveDialog, setOpenSaveDialog] = useState(false);
   const [openLoadDialog, setOpenLoadDialog] = useState(false);
+  const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
   const contextValue = {
     openSB,
@@ -29,6 +32,8 @@ export const UIContextProvider = ({ children }) => {
     setOpenSaveDialog,
     openLoadDialog,
     setOpenLoadDialog,
+    openDeleteDialog,
+    setOpenDeleteDialog
   };
   return (
     <UIContext.Provider value={contextValue}>{children}</UIContext.Provider>

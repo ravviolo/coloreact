@@ -3,6 +3,7 @@ import PaletteContext from "../../context/PaletteContext";
 import { useHistory } from "react-router";
 
 import PalettePreview from "../../components/PalettePreview/PalettePreview";
+import DeleteDialog from "../../components/UI/DeleteDialog";
 import { useStyles } from "./PaletteListPage.styles";
 
 const PaletteListPage = () => {
@@ -24,10 +25,12 @@ const PaletteListPage = () => {
             <PalettePreview
               {...palette}
               goToPalette={() => history.push(`/palette/${palette.id}`)}
+              showDelete={true}
             />
           ))}
         </div>
       </div>
+      <DeleteDialog />
     </div>
   );
 };

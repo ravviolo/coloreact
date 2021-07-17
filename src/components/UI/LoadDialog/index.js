@@ -54,6 +54,7 @@ const LoadDialog = () => {
                   className={classes.ModalPalettePreview}
                   goToPalette={() => handlePick(palette.id)}
                   notChosen={chosenPalette && palette.id !== chosenPalette.id}
+                  showDelete={false}
                 />
               </div>
             ))}

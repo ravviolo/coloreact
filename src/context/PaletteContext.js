@@ -24,6 +24,7 @@ export const PaletteContextProvider = ({ children }) => {
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState("hex");
   const [newPalette, setNewPalette] = useState(initialPalettes[0].colors);
+  const [paletteId, setPaletteId] = useState(null);
   const [pickedColor, setPickedColor] = useState("teal");
 
   const getPalette = (paletteId) => {
@@ -46,6 +47,9 @@ export const PaletteContextProvider = ({ children }) => {
   };
 
   const resetNewPalette = () => setNewPalette(initialPalettes[0].colors);
+  const deletePalette = (id) => {
+    setPalettes(palettes.filter(palette=>palette.id!==id))
+  }
 
   const contextValue = {
     palettes,
@@ -61,6 +65,8 @@ export const PaletteContextProvider = ({ children }) => {
     pickedColor,
     setPickedColor,
     resetNewPalette,
+    deletePalette,
+    paletteId, setPaletteId
   };
   return (
     <PaletteContext.Provider value={contextValue}>
