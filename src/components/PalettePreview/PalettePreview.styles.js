@@ -26,6 +26,7 @@ export const useStyles = makeStyles({
     display: "flex",
     flexWrap: "wrap",
     borderRadius: 5,
+    alignContent: 'flex-start'
   },
   MiniColorBox: {
     height: "25%",
