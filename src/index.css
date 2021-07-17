@@ -2,15 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #16116d #1f17aa;
 }
 body {
   font-family: "Roboto", sans-serif;
-
 }
 a {
   text-decoration: none;
 }
-
 
 @media screen and (max-width: 1500px) {
   html {
@@ -22,4 +22,22 @@ a {
     font-size: 1rem;
   }
 }
+/* Chrome Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+::-webkit-scrollbar-track {
+  background: #1f17aa;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background: #1f17aa;
+}
