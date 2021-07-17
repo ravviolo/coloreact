@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useToggle } from "../hooks/useToggle";
 
 // SB = Snackbar
 // DR = Drawer
@@ -17,12 +18,12 @@ const UIContext = React.createContext({
 });
 
 export const UIContextProvider = ({ children }) => {
-  const [openSB, setOpenSB] = useState(false);
-  const [openDR, setOpenDR] = useState(false);
-  const [openSaveDialog, setOpenSaveDialog] = useState(false);
-  const [openLoadDialog, setOpenLoadDialog] = useState(false);
-  const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-  const [openRestoreDialog, setOpenRestoreDialog] = useState(false);
+  const [openSB, setOpenSB] = useToggle(false);
+  const [openDR, setOpenDR] = useToggle(false);
+  const [openSaveDialog, setOpenSaveDialog] = useToggle(false);
+  const [openLoadDialog, setOpenLoadDialog] = useToggle(false);
+  const [openDeleteDialog, setOpenDeleteDialog] = useToggle(false);
+  const [openRestoreDialog, setOpenRestoreDialog] = useToggle(false);
 
   const contextValue = {
     openSB,

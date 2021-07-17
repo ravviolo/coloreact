@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import initialPalettes from "../utils/constants/initialPalettes";
 import generatePalette from "../utils/helpers/generatePalette";
-import { useLocalStorageState } from "../hooks/useLocalStorageState";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const PaletteContext = React.createContext({
   palettes: [],
@@ -17,7 +17,7 @@ const PaletteContext = React.createContext({
 });
 
 export const PaletteContextProvider = ({ children }) => {
-  const [palettes, setPalettes] = useLocalStorageState(
+  const [palettes, setPalettes] = useLocalStorage(
     "palettes",
     initialPalettes
   );
