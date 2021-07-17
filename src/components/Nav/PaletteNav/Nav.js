@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import PaletteContext from '../../../context/PaletteContext'
 import UIContext from "../../../context/UIContext";
 
-import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import Slider from "rc-slider";
 
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -35,13 +35,13 @@ const Nav = ({ shadesPalette }) => {
       </div>
       {!shadesPalette && (
         <div className={classes.SliderContainer}>
-          <span>Level: {level}</span>
           <Slider
             defaultValue={level}
             min={100}
             max={900}
             step={100}
             onAfterChange={handleSliderChange}
+            className={classes.Slider}
           />
         </div>
       )}
