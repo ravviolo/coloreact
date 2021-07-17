@@ -1,4 +1,4 @@
-import { useContext } from "react";
+ import { useContext } from "react";
 import PaletteContext from "../../../context/PaletteContext";
 
 import { SortableContainer } from "react-sortable-hoc";

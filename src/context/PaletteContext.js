@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import initialPalettes from "../initialPalettes";
-import generatePalette from "../helpers/colorHelper";
+import initialPalettes from "../utils/constants/initialPalettes";
+import generatePalette from "../utils/helpers/generatePalette";
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 const PaletteContext = React.createContext({

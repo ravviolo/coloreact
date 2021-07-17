@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { useStyles } from "./ColorBox.styles";
+import { useStyles } from "./styles";
 import clsx from "clsx";
 
 const ColorBoxLink = ({ isShadesPalette }) => {

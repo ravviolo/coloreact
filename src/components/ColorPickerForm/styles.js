@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import { TEXT_CONTRAST } from "../../constants/textContast";
+import { TEXT_CONTRAST } from "../../utils/helpers/textContrast";
 
 export const useStyles = makeStyles({
   Form: {
