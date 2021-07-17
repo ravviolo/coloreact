@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import Palette from "../../components/Palette/MainPalette/index";
 import Nav from "../../components/Nav/MainPaletteNav/index";
 import Footer from "../../components/Footer/index";
-import SnackbarComponent from "../../components/UI/Snackbars/SnackbarComponent";
+import SnackbarFormat from "../../components/UI/Snackbars/SnackbarFormat";
 
 import { useStyles } from "./styles";
 
@@ -26,7 +26,7 @@ const MainPalette = ({ shadesPalette }) => {
       <Nav shadesPalette={shadesPalette} />
       <Palette {...palette} shadesPalette={shadesPalette} />
       <Footer paletteName={palette.paletteName} emoji={palette.emoji} />
-      <SnackbarComponent />
+      <SnackbarFormat />
     </div>
   );
 };

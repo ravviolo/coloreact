@@ -6,10 +6,10 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
-const SnackbarComponent = () => {
-  const { openSB, setOpenSB } = useContext(UIContextProvider);
+const SnackbarFormat = () => {
+  const { openSBFormat, setOpenSBFormat } = useContext(UIContextProvider);
   const { format } = useContext(PaletteContext);
-  const handleClose = () => setOpenSB(false);
+  const handleClose = () => setOpenSBFormat(false);
 
   return (
     <div>
@@ -18,7 +18,7 @@ const SnackbarComponent = () => {
           vertical: "bottom",
           horizontal: "left",
         }}
-        open={openSB}
+        open={openSBFormat}
         autoHideDuration={3000}
         onClose={handleClose}
         message={
@@ -44,4 +44,4 @@ const SnackbarComponent = () => {
   );
 };
 
-export default SnackbarComponent;
+export default SnackbarFormat;

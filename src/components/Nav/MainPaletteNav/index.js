@@ -15,7 +15,7 @@ import { useStyles } from "./styles";
 
 const Nav = ({ shadesPalette }) => {
   const { level, setLevel, format, setFormat } = useContext(PaletteContext);
-  const { setOpenSB } = useContext(UIContext);
+  const { setOpenSBFormat } = useContext(UIContext);
   const classes = useStyles();
 
   const handleSliderChange = (e) => {
@@ -23,7 +23,7 @@ const Nav = ({ shadesPalette }) => {
   };
   const handleSelectChange = (e) => {
     setFormat(e.target.value);
-    setOpenSB(true);
+    setOpenSBFormat(true);
   };
 
   return (
