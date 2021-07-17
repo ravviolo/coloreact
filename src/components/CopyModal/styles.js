@@ -33,16 +33,15 @@ export const useStyles = makeStyles((theme) => ({
       textShadow: "1px 1px 2px rgb(73, 73, 73)",
       padding: "0.75em 0",
       background: "rgba(255, 255, 255, 0.3)",
-      [theme.breakpoints.down('md')]: {
-        fontSize: '4rem'
+      [theme.breakpoints.down("md")]: {
+        fontSize: "4rem",
       },
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '3.5rem'
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "3.5rem",
       },
-      [theme.breakpoints.down('xs')]: {
-        fontSize: '2.5rem'
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "2.5rem",
       },
-      
     },
 
     "& p": {
@@ -51,8 +50,8 @@ export const useStyles = makeStyles((theme) => ({
       fontWeight: 100,
       marginTop: "1.2em",
       ...TEXT_CONTRAST,
-      [theme.breakpoints.down('xs')]: {
-        fontSize: '1rem'
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "1rem",
       },
     },
   },
