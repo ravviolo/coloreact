@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import PaletteContext from "../../../../context/PaletteContext";
-import UIContext from "../../../../context/UIContext";
+import { useState } from "react";
+import { usePalette } from "../../../../context/PaletteContext";
+import { useUI } from "../../../../context/UIContext";
 
 import PalettePreview from "../../../PalettePreview/index";
 
@@ -13,8 +13,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { useStyles } from "./styles";
 
 const LoadDialog = () => {
-  const { palettes, setNewPalette } = useContext(PaletteContext);
-  const { openLoadDialog, setOpenLoadDialog } = useContext(UIContext);
+  const { palettes, setNewPalette } = usePalette();
+  const { openLoadDialog, setOpenLoadDialog } = useUI();
   const [chosenPalette, setChosenPalette] = useState(null);
   const classes = useStyles();
 

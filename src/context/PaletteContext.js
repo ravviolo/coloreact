@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import initialPalettes from "../utils/constants/initialPalettes";
 import generatePalette from "../utils/helpers/generatePalette";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -86,4 +86,7 @@ export const PaletteContextProvider = ({ children }) => {
   );
 };
 
-export default PaletteContext;
+export const usePalette = () => useContext(PaletteContext)
+
+
+// export default PaletteContext;

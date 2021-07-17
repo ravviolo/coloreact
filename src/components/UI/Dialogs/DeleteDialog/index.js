@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import UIContext from "../../../../context/UIContext";
-import PaletteContext from "../../../../context/PaletteContext";
+import {useUI} from "../../../../context/UIContext";
+import {usePalette} from "../../../../context/PaletteContext";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
 import List from "@material-ui/core/List";
@@ -13,8 +12,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import { blue, red } from "@material-ui/core/colors";
 
 const DeleteDialog = () => {
-  const { openDeleteDialog, setOpenDeleteDialog } = useContext(UIContext);
-  const { paletteId, deletePalette } = useContext(PaletteContext);
+  const { openDeleteDialog, setOpenDeleteDialog } = useUI();
+  const { paletteId, deletePalette } = usePalette();
   const handleClose = () => {
     setOpenDeleteDialog(false);
   };

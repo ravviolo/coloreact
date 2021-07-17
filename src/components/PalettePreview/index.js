@@ -1,7 +1,6 @@
 import clsx from "clsx";
-import { useContext } from "react";
-import UIContext from "../../context/UIContext";
-import PaletteContext from "../../context/PaletteContext";
+import {useUI} from "../../context/UIContext";
+import {usePalette} from "../../context/PaletteContext";
 import { useStyles } from "./styles";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 
@@ -14,8 +13,8 @@ const PalettePreview = ({
   notChosen,
   showDelete,
 }) => {
-  const { setOpenDeleteDialog } = useContext(UIContext);
-  const { setPaletteId } = useContext(PaletteContext);
+  const { setOpenDeleteDialog } = useUI();
+  const { setPaletteId } = usePalette();
   const classes = useStyles();
   const handleDeleteDialog = (e) => {
     e.stopPropagation();

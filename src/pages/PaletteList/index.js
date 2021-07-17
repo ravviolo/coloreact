@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import PaletteContext from "../../context/PaletteContext";
-import UIContext from "../../context/UIContext";
+import { usePalette } from "../../context/PaletteContext";
+import { useUI } from "../../context/UIContext";
 import { useHistory } from "react-router";
 
 import PalettePreview from "../../components/PalettePreview";
@@ -9,8 +8,8 @@ import RestoreDialog from "../../components/UI/Dialogs/RestoreDialog";
 import { useStyles } from "./styles";
 
 const PaletteList = () => {
-  const { palettes } = useContext(PaletteContext);
-  const { setOpenRestoreDialog } = useContext(UIContext);
+  const { palettes } = usePalette();
+  const { setOpenRestoreDialog } = useUI();
 
   const history = useHistory();
   const classes = useStyles();

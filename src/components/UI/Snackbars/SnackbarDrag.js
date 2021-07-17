@@ -1,12 +1,10 @@
-import { useContext } from "react";
-import UIContextProvider from "../../../context/UIContext";
-
+import {useUI} from "../../../context/UIContext";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
 const SnackbarDrag = () => {
-  const { openSBDrag, setOpenSBDrag } = useContext(UIContextProvider);
+  const { openSBDrag, setOpenSBDrag } = useUI();
   const handleClose = () => setOpenSBDrag(false);
 
   return (

@@ -1,8 +1,7 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 // import PaletteContext from "../../context/PaletteContext";
-import PaletteContext from '../../../context/PaletteContext'
-import UIContext from "../../../context/UIContext";
+import {usePalette} from '../../../context/PaletteContext'
+import {useUI} from "../../../context/UIContext";
 
 import "rc-slider/assets/index.css";
 import Slider from "rc-slider";
@@ -14,8 +13,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { useStyles } from "./styles";
 
 const Nav = ({ shadesPalette }) => {
-  const { level, setLevel, format, setFormat } = useContext(PaletteContext);
-  const { setOpenSBFormat } = useContext(UIContext);
+  const { level, setLevel, format, setFormat } = usePalette();
+  const { setOpenSBFormat } = useUI();
   const classes = useStyles();
 
   const handleSliderChange = (e) => {

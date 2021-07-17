@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import UIContext from "../../../context/UIContext";
-import PaletteContext from "../../../context/PaletteContext";
+import {useUI} from "../../../context/UIContext";
+import {usePalette} from "../../../context/PaletteContext";
 import clsx from "clsx";
 
 import DragColorBoxContainer from "../../UI/DragColorBoxContainer";
@@ -9,8 +8,8 @@ import arrayMove from "array-move";
 import { useStyles } from "./styles";
 
 const Palette = () => {
-  const { openDR } = useContext(UIContext);
-  const { newPalette, setNewPalette } = useContext(PaletteContext);
+  const { openDR } = useUI();
+  const { newPalette, setNewPalette } = usePalette();
   const classes = useStyles();
 
   const handleSortEnd = ({ oldIndex, newIndex }) => {

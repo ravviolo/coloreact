@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import UIContext from "../../../../context/UIContext";
-import PaletteContext from "../../../../context/PaletteContext";
+import { useUI } from "../../../../context/UIContext";
+import { usePalette } from "../../../../context/PaletteContext";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";
-
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -15,10 +13,9 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 const SaveDialog = () => {
-  const { openSaveDialog, setOpenSaveDialog } = useContext(UIContext);
+  const { palettes, newPalette, setPalettes, resetNewPalette } = usePalette();
+  const { openSaveDialog, setOpenSaveDialog } = useUI();
   const [openEmoji, setOpenEmoji] = useState(false);
-  const { palettes, newPalette, setPalettes, resetNewPalette } =
-    useContext(PaletteContext);
   const [enteredName, setEnteredName] = useState("");
   const [emoji, setEmoji] = useState(null);
   const history = useHistory();

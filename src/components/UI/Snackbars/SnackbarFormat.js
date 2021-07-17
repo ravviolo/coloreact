@@ -1,14 +1,13 @@
-import { useContext } from "react";
-import UIContextProvider from "../../../context/UIContext";
-import PaletteContext from "../../../context/PaletteContext";
+import {useUI} from "../../../context/UIContext";
+import {usePalette} from "../../../context/PaletteContext";
 
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
 const SnackbarFormat = () => {
-  const { openSBFormat, setOpenSBFormat } = useContext(UIContextProvider);
-  const { format } = useContext(PaletteContext);
+  const { openSBFormat, setOpenSBFormat } = useUI();
+  const { format } = usePalette();
   const handleClose = () => setOpenSBFormat(false);
 
   return (

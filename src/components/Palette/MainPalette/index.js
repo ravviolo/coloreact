@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import PaletteContext from "../../../context/PaletteContext";
+import {usePalette} from "../../../context/PaletteContext";
 import ColorBox from "../../ColorBox/index";
 import ColorBoxLink from "../../ColorBox/ColorBoxLink";
 
 import { useStyles } from "./styles";
 
 const Palette = ({ colors, shadesPalette }) => {
-  const { level, format } = useContext(PaletteContext);
+  const { level, format } = usePalette();
   const classes = useStyles();
 
   let colorBoxes;

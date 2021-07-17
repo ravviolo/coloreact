@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import UIContext from "../../../context/UIContext";
+import { useUI } from "../../../context/UIContext";
 import { useHistory } from "react-router";
 
 import clsx from "clsx";
@@ -13,8 +12,7 @@ import Button from "@material-ui/core/Button";
 import { useStyles } from "./styles";
 
 const Nav = () => {
-  const { openDR, setOpenDR, setOpenSaveDialog, setOpenLoadDialog } =
-    useContext(UIContext);
+  const { openDR, setOpenDR, setOpenSaveDialog, setOpenLoadDialog } = useUI();
   const history = useHistory();
   const classes = useStyles();
 

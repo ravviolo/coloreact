@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import UIContext from "../../../../context/UIContext";
-import PaletteContext from "../../../../context/PaletteContext";
+import {useUI} from "../../../../context/UIContext";
+import {usePalette} from "../../../../context/PaletteContext";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -15,8 +14,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import { blue, red } from "@material-ui/core/colors";
 
 const RestoreDialog = () => {
-  const { openRestoreDialog, setOpenRestoreDialog } = useContext(UIContext);
-  const { restorePalettes } = useContext(PaletteContext);
+  const { openRestoreDialog, setOpenRestoreDialog } = useUI();
+  const { restorePalettes } = usePalette();
   const handleClose = () => {
     setOpenRestoreDialog(false);
   };

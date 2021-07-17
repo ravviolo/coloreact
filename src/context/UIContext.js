@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useToggle } from "../hooks/useToggle";
 
 // SB = Snackbar
@@ -47,4 +47,6 @@ export const UIContextProvider = ({ children }) => {
   );
 };
 
-export default UIContext;
+export const useUI = () => useContext(UIContext) 
+
+// export default UIContext;

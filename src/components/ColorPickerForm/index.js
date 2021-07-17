@@ -1,5 +1,5 @@
-import { useState, useContext, useEffect } from "react";
-import PaletteContext from "../../context/PaletteContext";
+import { useState, useEffect } from "react";
+import {usePalette} from "../../context/PaletteContext";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { ChromePicker } from "react-color";
 import Button from "@material-ui/core/Button";
@@ -7,7 +7,7 @@ import { useStyles } from "./styles";
 
 const ColorPickerForm = () => {
   const [inputText, setInputText] = useState("");
-  const { newPalette, setNewPalette, pickedColor, setPickedColor } = useContext(PaletteContext);
+  const { newPalette, setNewPalette, pickedColor, setPickedColor } = usePalette();
   const classes = useStyles({ color: pickedColor });
   const isPaletteFull = newPalette.length === 20;
 

@@ -1,11 +1,10 @@
- import { useContext } from "react";
-import PaletteContext from "../../../context/PaletteContext";
+import {usePalette} from "../../../context/PaletteContext";
 
 import { SortableContainer } from "react-sortable-hoc";
 import DragColorBox from "../../ColorBox/DragColorBox";
 
 const DragColorBoxContainer = ({ className }) => {
-  const { newPalette } = useContext(PaletteContext);
+  const { newPalette } = usePalette();
 
   return (
     <div className={className}>

@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import PaletteContext from "../../context/PaletteContext";
+import { usePalette } from "../../context/PaletteContext";
 import { useParams } from "react-router";
 
 import Palette from "../../components/Palette/MainPalette/index";
@@ -10,7 +9,7 @@ import SnackbarFormat from "../../components/UI/Snackbars/SnackbarFormat";
 import { useStyles } from "./styles";
 
 const MainPalette = ({ shadesPalette }) => {
-  const { getPalette, getShades } = useContext(PaletteContext);
+  const { getPalette, getShades } = usePalette();
   const { paletteId, colorId } = useParams();
   const classes = useStyles();
 
