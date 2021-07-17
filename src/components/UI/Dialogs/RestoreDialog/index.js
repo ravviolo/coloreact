@@ -14,7 +14,7 @@ import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
 import { blue, red } from "@material-ui/core/colors";
 
-const ResetDialog = () => {
+const RestoreDialog = () => {
   const { openRestoreDialog, setOpenRestoreDialog } = useContext(UIContext);
   const { restorePalettes } = useContext(PaletteContext);
   const handleClose = () => {
@@ -55,4 +55,4 @@ const ResetDialog = () => {
   );
 };
 
-export default ResetDialog;
+export default RestoreDialog;
