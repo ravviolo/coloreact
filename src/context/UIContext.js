@@ -22,6 +22,7 @@ export const UIContextProvider = ({ children }) => {
   const [openSaveDialog, setOpenSaveDialog] = useState(false);
   const [openLoadDialog, setOpenLoadDialog] = useState(false);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
+  const [openRestoreDialog, setOpenRestoreDialog] = useState(false);
 
   const contextValue = {
     openSB,
@@ -33,7 +34,9 @@ export const UIContextProvider = ({ children }) => {
     openLoadDialog,
     setOpenLoadDialog,
     openDeleteDialog,
-    setOpenDeleteDialog
+    setOpenDeleteDialog,
+    openRestoreDialog,
+    setOpenRestoreDialog
   };
   return (
     <UIContext.Provider value={contextValue}>{children}</UIContext.Provider>

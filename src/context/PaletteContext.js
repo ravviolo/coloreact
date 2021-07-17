@@ -48,8 +48,17 @@ export const PaletteContextProvider = ({ children }) => {
 
   const resetNewPalette = () => setNewPalette(initialPalettes[0].colors);
   const deletePalette = (id) => {
-    setPalettes(palettes.filter(palette=>palette.id!==id))
-  }
+    setPalettes(palettes.filter((palette) => palette.id !== id));
+  };
+  const restorePalettes = () => {
+    const customPalettes = palettes.filter((savedPalette) =>
+      initialPalettes.every(
+        (initialPalette) => initialPalette.id !== savedPalette.id
+      )
+    );
+    const restoredPalettes = [...customPalettes, ...initialPalettes];
+    setPalettes(restoredPalettes);
+  };
 
   const contextValue = {
     palettes,
@@ -66,7 +75,9 @@ export const PaletteContextProvider = ({ children }) => {
     setPickedColor,
     resetNewPalette,
     deletePalette,
-    paletteId, setPaletteId
+    paletteId,
+    setPaletteId,
+    restorePalettes,
   };
   return (
     <PaletteContext.Provider value={contextValue}>
