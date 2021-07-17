@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
-// import PaletteContext from "../../context/PaletteContext";
-import {usePalette} from '../../../context/PaletteContext'
-import {useUI} from "../../../context/UIContext";
+import { usePalette } from "../../../context/PaletteContext";
+import { useUI } from "../../../context/UIContext";
 
 import "rc-slider/assets/index.css";
 import Slider from "rc-slider";
-
+import Logo from "../../Logo";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
-// import * as Styled from "./Nav.styles";
 import { useStyles } from "./styles";
 
 const Nav = ({ shadesPalette }) => {
@@ -28,9 +25,7 @@ const Nav = ({ shadesPalette }) => {
   return (
     <nav className={classes.Nav}>
       <div className={classes.LogoContainer}>
-        <Link className={classes.Logo} to="/">
-          coloreact
-        </Link>
+        <Logo main={false}/>
       </div>
       {!shadesPalette && (
         <div className={classes.SliderContainer}>
