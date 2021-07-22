@@ -1,18 +1,22 @@
-import {useUI} from "../../../context/UIContext";
+import { useUI } from "../../../context/UIContext";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 
 const SnackbarDrag = () => {
   const { openSBDrag, setOpenSBDrag } = useUI();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const handleClose = () => setOpenSBDrag(false);
 
   return (
     <div>
       <Snackbar
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
+          vertical: matches ? "bottom" : "top",
+          horizontal: "left",
         }}
         open={openSBDrag}
         autoHideDuration={3000}
