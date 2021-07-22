@@ -13,6 +13,7 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: "#1f17aa",
     minHeight: "100vh",
     backgroundImage: `url(${background})`,
+    /* background by SVGBackgrounds.com */
   },
   PageContent: {
     width: "60%",
