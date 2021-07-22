@@ -1,5 +1,5 @@
-import {useUI} from "../../context/UIContext";
-import {usePalette} from "../../context/PaletteContext";
+import { useUI } from "../../context/UIContext";
+import { usePalette } from "../../context/PaletteContext";
 import clsx from "clsx";
 
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
@@ -38,6 +38,7 @@ const PalettePreview = ({
           <div
             className={classes.MiniColorBox}
             style={{ backgroundColor: color.color }}
+            key={color.name}
           />
         ))}
       </div>

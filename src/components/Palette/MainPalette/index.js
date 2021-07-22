@@ -1,4 +1,4 @@
-import {usePalette} from "../../../context/PaletteContext";
+import { usePalette } from "../../../context/PaletteContext";
 
 import ColorBox from "../../ColorBox/index";
 import ColorBoxLink from "../../ColorBox/ColorBoxLink";
@@ -17,6 +17,7 @@ const Palette = ({ colors, shadesPalette }) => {
         name={color.name}
         color={color[format]}
         isShadesPalette={true}
+        key={color.name}
       />
     ));
   } else {
@@ -26,6 +27,7 @@ const Palette = ({ colors, shadesPalette }) => {
         color={color[format]}
         colorId={color.id}
         isShadesPalette={false}
+        key={color.name}
       />
     ));
   }

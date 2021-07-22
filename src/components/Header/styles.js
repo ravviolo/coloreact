@@ -37,28 +37,4 @@ export const useStyles = makeStyles({
       marginLeft: "2em",
     },
   },
-  Logo: {
-    fontSize: "2.5rem",
-    marginRight: "auto",
-    textTransform: "lowercase",
-    letterSpacing: 5,
-    "@media (max-width: 450px)": {
-      marginRight: "100%",
-      marginBottom: "2rem",
-    },
-
-    "&:hover": {
-      cursor: "pointer",
-      background:
-        "linear-gradient(124deg,#1ddde8,#1d64e8,#2b1de8, #641de8,#dd00f3,#b003d3,#cf07c5,#f300df,#ff2400,#e81d1d,#e8b71d,#e3e81d,#1de840)",
-      backgroundClip: "text",
-      WebkitBackgroundClip: "text",
-      color: "transparent",
-      backgroundSize: "400% 100%",
-      animationName: "$rainbow",
-      animationDuration: "6s",
-      animationIterationCount: "infinite",
-      animationTimingFunction: "ease",
-    },
-  },
 });

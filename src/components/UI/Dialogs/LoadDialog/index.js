@@ -48,7 +48,7 @@ const LoadDialog = () => {
           </DialogContentText>
           <div className={classes.LoadPaletteList}>
             {palettes.map((palette) => (
-              <div className={classes.overlay}>
+              <div className={classes.overlay} key={palette.id}>
                 <PalettePreview
                   {...palette}
                   className={classes.ModalPalettePreview}
