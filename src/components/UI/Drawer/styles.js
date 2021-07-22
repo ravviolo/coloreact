@@ -21,6 +21,10 @@ export const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   },
+  DrawerTitle: {
+    fontSize: "2.5rem",
+    marginBottom: "1rem",
+  },
   DrawerContent: {
     height: "100vh",
     width: "80%",
@@ -29,9 +33,6 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    [theme.breakpoints.down("xs")]: {
-      justifyContent: "flex-start",
-    },
   },
   ButtonContainer: {
     width: "100%",
