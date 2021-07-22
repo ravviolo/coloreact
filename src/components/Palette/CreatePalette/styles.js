@@ -35,8 +35,5 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     alignContent: "flex-start",
-    "@media (max-width: 389px)": {
-      marginTop: "2.3rem",
-    },
   },
 }));

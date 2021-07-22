@@ -7,12 +7,16 @@ import Toolbar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 import { useStyles } from "./styles";
 
 const Nav = () => {
   const { openDR, setOpenDR, setOpenSaveDialog, setOpenLoadDialog } = useUI();
   const history = useHistory();
   const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   const handleDrawerOpen = () => setOpenDR(true);
   const handleGoBack = () => history.goBack();
@@ -49,7 +53,7 @@ const Nav = () => {
                 color="secondary"
                 onClick={openSaveDialog}
               >
-                Save Palette
+                {matches ? "Save Palette" : "Save"}
               </Button>
               <Button
                 className={classes.Button}
@@ -57,7 +61,7 @@ const Nav = () => {
                 color="primary"
                 onClick={openLoadDialog}
               >
-                Load Palette
+                {matches ? "Load Palette" : "Load"}
               </Button>
             </div>
             <Button className={classes.Button} onClick={handleGoBack}>
