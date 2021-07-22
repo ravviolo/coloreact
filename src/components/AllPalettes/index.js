@@ -11,7 +11,7 @@ const AllPalettes = () => {
   return (
     <TransitionGroup className={classes.PaletteList}>
       {palettes.map((palette) => (
-        <CSSTransition key={palette.id} timeout={300} classNames="fade">
+        <CSSTransition key={palette.id} timeout={500} classNames="fade">
           <PalettePreview
             {...palette}
             goToPalette={() => history.push(`/palette/${palette.id}`)}

@@ -1,3 +1,4 @@
+import Page from '../../components/UI/Page'
 import Nav from "../../components/Nav/CreatePaletteNav";
 import DrawerComponent from "../../components/UI/Drawer";
 import Palette from "../../components/Palette/CreatePalette";
@@ -11,14 +12,14 @@ const CreatePalette = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <Page className={classes.root}>
       <Nav />
       <DrawerComponent />
       <Palette />
       <SaveDialog />
       <LoadDialog />
       <SnackbarDrag/>
-    </div>
+    </Page>
   );
 };
 

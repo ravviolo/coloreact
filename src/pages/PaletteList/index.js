@@ -1,3 +1,4 @@
+import Page from '../../components/UI/Page'
 import Header from "../../components/Header";
 import AllPalettes from "../../components/AllPalettes";
 import DeleteDialog from "../../components/UI/Dialogs/DeleteDialog";
@@ -9,14 +10,14 @@ const PaletteList = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.PageContainer}>
+    <Page className={classes.PageContainer}>
       <div className={classes.PageContent}>
         <Header />
         <AllPalettes />
       </div>
       <DeleteDialog />
       <RestoreDialog />
-    </div>
+    </Page>
   );
 };
 

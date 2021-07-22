@@ -1,4 +1,5 @@
-import { Route } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import MainPalette from "../../pages/MainPalette";
 import PaletteList from "../../pages/PaletteList";
@@ -6,20 +7,48 @@ import CreatePalette from "../../pages/CreatePalette";
 import "./App.css";
 
 function App() {
+  const location = useLocation();
   return (
     <main className="App">
-      <Route path="/" exact>
-        <PaletteList />
+      <Route>
+        <SwitchTransition mode='out-in'>
+          <CSSTransition
+            timeout={300}
+            classNames="fade"
+            key={location.key}
+            
+          >
+            <Switch location={location}>
+              <Route path="/" exact>
+                <PaletteList />
+              </Route>
+              <Route path="/create-palette" exact>
+                <CreatePalette />
+              </Route>
+              <Route path="/palette/:paletteId" exact>
+                <MainPalette shadesPalette={false} />
+              </Route>
+              <Route path="/palette/:paletteId/:colorId" exact>
+                <MainPalette shadesPalette={true} />
+              </Route>
+            </Switch>
+          </CSSTransition>
+        </SwitchTransition>
       </Route>
-      <Route path="/create-palette" exact>
-        <CreatePalette />
-      </Route>
-      <Route path="/palette/:paletteId" exact>
-        <MainPalette shadesPalette={false} />
-      </Route>
-      <Route path="/palette/:paletteId/:colorId" exact>
-        <MainPalette shadesPalette={true} />
-      </Route>
+      {/* <Switch>
+        <Route path="/" exact>
+          <PaletteList />
+        </Route>
+        <Route path="/create-palette" exact>
+          <CreatePalette />
+        </Route>
+        <Route path="/palette/:paletteId" exact>
+          <MainPalette shadesPalette={false} />
+        </Route>
+        <Route path="/palette/:paletteId/:colorId" exact>
+          <MainPalette shadesPalette={true} />
+        </Route>
+      </Switch> */}
     </main>
   );
 }

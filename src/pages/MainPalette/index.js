@@ -1,9 +1,10 @@
 import { usePalette } from "../../context/PaletteContext";
 import { useParams } from "react-router";
+import Page from '../../components/UI/Page'
 
-import Palette from "../../components/Palette/MainPalette/index";
-import Nav from "../../components/Nav/MainPaletteNav/index";
-import Footer from "../../components/Footer/index";
+import Palette from "../../components/Palette/MainPalette";
+import Nav from "../../components/Nav/MainPaletteNav";
+import Footer from "../../components/Footer";
 import SnackbarFormat from "../../components/UI/Snackbars/SnackbarFormat";
 
 import { useStyles } from "./styles";
@@ -21,12 +22,12 @@ const MainPalette = ({ shadesPalette }) => {
   }
 
   return (
-    <div className={classes.PalettePage}>
+    <Page className={classes.PalettePage}>
       <Nav shadesPalette={shadesPalette} />
       <Palette {...palette} shadesPalette={shadesPalette} />
       <Footer paletteName={palette.paletteName} emoji={palette.emoji} />
       <SnackbarFormat />
-    </div>
+    </Page>
   );
 };
 
