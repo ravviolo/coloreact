@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme) => ({
   Card: {
     margin: "1rem 0",
     height: "25vh",
@@ -25,7 +25,7 @@ export const useStyles = makeStyles({
     display: "flex",
     flexWrap: "wrap",
     borderRadius: 5,
-    alignContent: 'flex-start'
+    alignContent: "flex-start",
   },
   MiniColorBox: {
     height: "25%",
@@ -67,6 +67,8 @@ export const useStyles = makeStyles({
         transition: "all 0.3s ease-in-out",
       },
     },
+    [theme.breakpoints.down("md")]: {
+      opacity: 1,
+    },
   },
-
-});
+}));
