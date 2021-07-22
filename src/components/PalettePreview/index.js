@@ -1,8 +1,10 @@
-import clsx from "clsx";
 import {useUI} from "../../context/UIContext";
 import {usePalette} from "../../context/PaletteContext";
-import { useStyles } from "./styles";
+import clsx from "clsx";
+
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
+
+import { useStyles } from "./styles";
 
 const PalettePreview = ({
   paletteName,

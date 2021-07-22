@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles({
   Header: {
     paddingTop: "2em",
     display: "flex",
@@ -61,4 +61,4 @@ export const useStyles = makeStyles((theme) => ({
       animationTimingFunction: "ease",
     },
   },
-}));
+});

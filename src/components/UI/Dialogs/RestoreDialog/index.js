@@ -1,5 +1,6 @@
 import {useUI} from "../../../../context/UIContext";
 import {usePalette} from "../../../../context/PaletteContext";
+
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";

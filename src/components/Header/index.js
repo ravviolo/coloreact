@@ -1,8 +1,8 @@
 import { useHistory } from "react-router";
 import { useUI } from "../../context/UIContext";
-
 import Logo from '../Logo'
 import { useStyles } from "./styles";
+
 const Header = () => {
 
   const classes = useStyles();

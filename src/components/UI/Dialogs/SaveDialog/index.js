@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { useUI } from "../../../../context/UIContext";
 import { usePalette } from "../../../../context/PaletteContext";
+
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from "emoji-mart";

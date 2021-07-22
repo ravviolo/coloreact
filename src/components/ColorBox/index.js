@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useHistory, useRouteMatch } from "react-router";
+import clsx from "clsx";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { generateCopyMsg } from "../../utils/helpers/generateCopyMsg";
+import CopyModal from "../CopyModal/index";
 
 import { useStyles } from "./styles";
-import clsx from "clsx";
-
-import CopyModal from "../CopyModal/index";
 
 const ColorBox = ({ color, name, colorId, isShadesPalette }) => {
   const [copied, setCopied] = useState(false);

@@ -1,4 +1,5 @@
 import {usePalette} from "../../../context/PaletteContext";
+
 import ColorBox from "../../ColorBox/index";
 import ColorBoxLink from "../../ColorBox/ColorBoxLink";
 

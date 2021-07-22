@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import AllPalettes from "../../components/AllPalettes";
 import DeleteDialog from "../../components/UI/Dialogs/DeleteDialog";
 import RestoreDialog from "../../components/UI/Dialogs/RestoreDialog";
+
 import { useStyles } from "./styles";
 
 const PaletteList = () => {

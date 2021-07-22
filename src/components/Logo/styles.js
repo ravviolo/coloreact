@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles({
   "@keyframes rainbow": {
     "0%": { backgroundPosition: "0% 82%" },
     "50%": { backgroundPosition: "100% 19%" },
@@ -52,4 +52,4 @@ export const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
   },
-}));
+});

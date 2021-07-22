@@ -1,6 +1,6 @@
 import { usePalette } from "../../../context/PaletteContext";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SortableContainer } from "react-sortable-hoc";
 import DragColorBox from "../../ColorBox/DragColorBox";
 

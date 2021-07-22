@@ -1,6 +1,5 @@
 import {usePalette} from "../../../context/PaletteContext";
 import { SortableElement } from "react-sortable-hoc";
-
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import { useStyles } from "./styles";
 
