@@ -1,4 +1,4 @@
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Route, Switch, useLocation, Redirect } from "react-router-dom";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import MainPalette from "../../pages/MainPalette";
 import PaletteList from "../../pages/PaletteList";
@@ -24,6 +24,9 @@ function App() {
               </Route>
               <Route path="/palette/:paletteId/:colorId" exact>
                 <MainPalette shadesPalette={true} />
+              </Route>
+              <Route path="*">
+                <Redirect to="/" />
               </Route>
             </Switch>
           </CSSTransition>
