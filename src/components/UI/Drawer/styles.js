@@ -23,7 +23,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   DrawerTitle: {
     fontSize: "2.5rem",
-    marginBottom: "1rem",
   },
   DrawerContent: {
     height: "100vh",

@@ -103,9 +103,10 @@ const SaveDialog = () => {
         <DialogTitle id="save-modal-emoji-title">Choose an Emoji</DialogTitle>
         <DialogContent>
           <Picker
-            title={emoji ? emoji["short_names"][0] : "Pick your emoji!"}
+            title={emoji ? emoji["short_names"][0] : "Pick!"}
             emoji={emoji ? emoji.id : "point_up"}
             onSelect={setEmoji}
+            style={{ maxWidth: "100%" }}
           />
         </DialogContent>
         <DialogActions>
