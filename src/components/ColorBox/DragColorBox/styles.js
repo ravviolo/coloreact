@@ -46,5 +46,8 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       transform: "rotate(20deg)",
     },
+    [theme.breakpoints.down("md")]: {
+      opacity: 1,
+    },
   },
 }));
