@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/coloreact/static/css/main.8e2c184c.chunk.css",
-    "main.js": "/coloreact/static/js/main.b2e935da.chunk.js",
-    "main.js.map": "/coloreact/static/js/main.b2e935da.chunk.js.map",
+    "main.js": "/coloreact/static/js/main.7dc22348.chunk.js",
+    "main.js.map": "/coloreact/static/js/main.7dc22348.chunk.js.map",
     "runtime-main.js": "/coloreact/static/js/runtime-main.05893375.js",
     "runtime-main.js.map": "/coloreact/static/js/runtime-main.05893375.js.map",
     "static/css/2.8dec86d5.chunk.css": "/coloreact/static/css/2.8dec86d5.chunk.css",
-    "static/js/2.74f8025a.chunk.js": "/coloreact/static/js/2.74f8025a.chunk.js",
-    "static/js/2.74f8025a.chunk.js.map": "/coloreact/static/js/2.74f8025a.chunk.js.map",
+    "static/js/2.d244637b.chunk.js": "/coloreact/static/js/2.d244637b.chunk.js",
+    "static/js/2.d244637b.chunk.js.map": "/coloreact/static/js/2.d244637b.chunk.js.map",
     "index.html": "/coloreact/index.html",
     "static/css/2.8dec86d5.chunk.css.map": "/coloreact/static/css/2.8dec86d5.chunk.css.map",
     "static/css/main.8e2c184c.chunk.css.map": "/coloreact/static/css/main.8e2c184c.chunk.css.map",
-    "static/js/2.74f8025a.chunk.js.LICENSE.txt": "/coloreact/static/js/2.74f8025a.chunk.js.LICENSE.txt",
+    "static/js/2.d244637b.chunk.js.LICENSE.txt": "/coloreact/static/js/2.d244637b.chunk.js.LICENSE.txt",
     "static/media/background.ac643736.svg": "/coloreact/static/media/background.ac643736.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.05893375.js",
     "static/css/2.8dec86d5.chunk.css",
-    "static/js/2.74f8025a.chunk.js",
+    "static/js/2.d244637b.chunk.js",
     "static/css/main.8e2c184c.chunk.css",
-    "static/js/main.b2e935da.chunk.js"
+    "static/js/main.7dc22348.chunk.js"
   ]
 }
