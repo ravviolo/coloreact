@@ -56,7 +56,7 @@ export const PaletteContextProvider = ({ children }) => {
         (initialPalette) => initialPalette.id !== savedPalette.id
       )
     );
-    const restoredPalettes = [...customPalettes, ...initialPalettes];
+    const restoredPalettes = [...initialPalettes, ...customPalettes];
     setPalettes(restoredPalettes);
   };
 
