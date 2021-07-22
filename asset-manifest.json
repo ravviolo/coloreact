@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/coloreact/static/css/main.8e2c184c.chunk.css",
-    "main.js": "/coloreact/static/js/main.b51f135f.chunk.js",
-    "main.js.map": "/coloreact/static/js/main.b51f135f.chunk.js.map",
+    "main.js": "/coloreact/static/js/main.b2e935da.chunk.js",
+    "main.js.map": "/coloreact/static/js/main.b2e935da.chunk.js.map",
     "runtime-main.js": "/coloreact/static/js/runtime-main.05893375.js",
     "runtime-main.js.map": "/coloreact/static/js/runtime-main.05893375.js.map",
     "static/css/2.8dec86d5.chunk.css": "/coloreact/static/css/2.8dec86d5.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.8dec86d5.chunk.css",
     "static/js/2.74f8025a.chunk.js",
     "static/css/main.8e2c184c.chunk.css",
-    "static/js/main.b51f135f.chunk.js"
+    "static/js/main.b2e935da.chunk.js"
   ]
 }
