@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Coloreact
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a color palette generator inspired by [Flat UI Colors](https://flatuicolors.com/) website. Project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Click here](https://ravviolo.github.io/coloreact) to view the app.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+  - [Overview](#overview)
+    - [Features](#features)
+    - [Screenshots](#screenshots)
+    - [Deployment](#deployment)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Browse through default color palettes
+- Create new palettes using color picker
+- Reorder your colors with drag and drop functionality
+- No idea which color is best for you? Choose a random color to help you get creative
+- Name your colors and palettes however you like, you can use emoji too
+- Edit existing palettes to create new color combinations
+- Easily delete a palette if you don't need it
+- Copy a color in different formats - HEX, RBG or HSL
+- Adjust color's lightness to fit your needs
 
-### `npm test`
+Website uses local storage to save your palettes, so you won't lose what you created!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshots
 
-### `npm run build`
+Desktop
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Homepage desktop view](./screenshots/desktop/homepage.png)
+![Palette desktop view](./screenshots/desktop/palette.png)
+![Create Palette view](./screenshots/desktop/create-palette.png)
+![Copy message overlay desktop view](./screenshots/desktop/copy-msg.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Mobile
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Homepage mobile view](./screenshots/mobile/homepage.png)
+![Palette mobile view](./screenshots/mobile/palette.png)
+![Palette tablet view](./screenshots/mobile/tablet-palette.png)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Website is hosted using [GitHub Pages](https://pages.github.com/).
 
-### `npm run build` fails to minify
+## My process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Built with
+
+- [React](https://reactjs.org/) as main UI tool
+- [React Router](https://github.com/remix-run/react-router) for client-side routing
+- [Context API](https://reactjs.org/docs/context.html) for sharing data between components
+- [Material UI](https://mui.com/material-ui/) for styling
+
+Other
+
+- [emoji-mart](https://www.npmjs.com/package/emoji-mart)
+- [chroma.js](https://gka.github.io/chroma.js/)
+- [react-copy-to-clipboard](https://www.npmjs.com/package/react-copy-to-clipboard)
+- [rc-slider](https://www.npmjs.com/package/rc-slider)
+- [array-move](https://www.npmjs.com/package/array-move)
+- [react-color](https://www.npmjs.com/package/react-color)
+- [react-sortable-hoc](https://www.npmjs.com/package/react-sortable-hoc)
+- [react-material-ui-form-validator](https://www.npmjs.com/package/react-material-ui-form-validator)
+- [react-transition-group](https://www.npmjs.com/package/react-transition-group)
+
+### What I learned
+
+- Building and connecting React components in complex layouts
+- Understanding the importance of design system, using common tools to achieve visually pleasing UI
+- Creating simple animations and page transitions
+- Client-Side Routing
+- Sharing 'global' data using Context API
+- Saving data to local storage
